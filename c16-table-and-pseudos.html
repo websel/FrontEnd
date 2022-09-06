@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Table and Pseudos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/myStyles.css" />
+</head>
+<body>
+    <div class="wrapper" id="cart-table">
+        <h1>CART</h1>
+        <table>
+            <tr>
+                <td>Ürün Kodu</td>
+                <td>Ürün Adı</td>
+                <td>Miktar</td>
+                <td>Birim Fiyat</td>
+                <td>Ara Toplam</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>164657</td>
+                <td>Klavye</td>
+                <td>2</td>
+                <td>80 ₺</td>
+                <td>160 ₺</td>
+                <td><i class="fa-solid fa-pen-to-square"></i> <i class="fa-solid fa-trash-can"></i></td>
+            </tr>
+            <tr>
+                <td colspan="4">TOPLAM</td>
+                <td>9.220 ₺</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+
+        <div class="buttons">
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i> Alışverişe Devam Et</a>
+            <a href="#"><i class="fa-solid fa-credit-card"></i> Ödemeye Geç</a>
+        </div>
+    </div>
+</body>
+</html>

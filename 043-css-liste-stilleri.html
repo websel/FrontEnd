@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        /* ul{list-style-type: '✔️';}
+        ul{list-style-type: decimal;}
+        ul{list-style-type: upper-roman;} */
+        *{padding:0; margin:0;}
+        ul{
+            list-style-type: disc;
+            /* list-style-image: url('images/ok-bg.png'); */
+            list-style-position: inside;
+        }
+        ul li{font-size: 24px;}
+        ul li::marker{color: blueviolet;}
+        .header{width: 70%; margin:0 auto;border:solid 1px;}
+        .header-text, .header-picture{display: inline-block; width: 49%;}
+        .vw-test{width: 80vw;background-color: antiquewhite;height: 100vh;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Angular</li>
+    </ul>
+
+    <div class="header">
+        <div class="header-text">
+            deneme
+        </div>
+        <div class="header-picture">
+            resim
+        </div>
+        <div class="vw-test">viewport test: 80vw - 100vh</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox denemeler</title>
+    <style>
+        .flex-container{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+        #container {
+    display: flex; /* establish flex container */
+    flex-direction: column; /* make main-axis vertical */
+    justify-content: center; /* align items vertically, in this case */
+    align-items: center; /* align items horizontally, in this case */
+    height: 97vh; /* for demo purposes */
+    border: 1px solid black; /* for demo purposes */
+    background-color: #eee; /* for demo purposes */
+}
+
+.box {
+    width: 300px;
+    margin: 5px;
+    text-align: center;
+}
+
+#bluebox { background: aqua; }
+#redbox { background: red; }
+
+ul#menu-konular{display: none;border:solid 1px; position: absolute;top:30px;left:10px;z-index: 5;background-color: #fff;}
+button.btn-acilir-menu + ul#menu-konular2,
+#chk-konular-menu ~ ul#menu-konular3{transition: height .4s ease-in-out;}
+button.btn-acilir-menu,label{background-color: #990000;color:#fff;font-weight: 700; padding: 10px 20px; cursor:pointer}
+nav{width: 200px;}
+button.btn-acilir-menu:hover{background-color: #000099;}
+button.btn-acilir-menu:hover + ul#menu-konular{display: block !important;}
+ul#menu-konular:hover{display: block;}
+
+
+nav.menu2{width: 200px;}
+ul#menu-konular2,#chk-konular-menu ~ ul#menu-konular3{border:solid 1px;opacity:0;height: 0;margin-top:-1px;overflow: hidden;}
+button.btn-acilir-menu:hover + ul#menu-konular2{opacity:1; height: 100px;}
+ul#menu-konular2:hover{opacity:1;height: 100px;}
+
+#chk-konular-menu{position: absolute; opacity: 0;height: 0px;}
+#chk-konular-menu:checked ~ ul#menu-konular3{opacity:1;height: 120px;}
+#menu-konular3{margin-top:7px !important;}
+label span{font-weight: 700;}
+label span::after{content: '+';margin-left: 20px;}
+#chk-konular-menu:checked + label span::after{content: '-';}
+.pseudos::first-letter{font-size: 2em;}
+.kutu > p{
+	color: blue;
+}
+    </style>
+</head>
+<body>
+    <!-- <div class="flex-container">
+        <div class="message">Sitemize Hoşgeldiniz</div>
+    </div> -->
+    <!-- <div id="container">
+
+        <div class="box" id="bluebox">
+            <p>DIV #1</p>
+        </div>
+    
+    </div> -->
+<nav>
+    <button class="btn-acilir-menu">KONULAR</button>
+    <ul id="menu-konular">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Angular</li>
+    </ul>
+</nav>
+<hr />
+<nav class="menu2">
+    <button class="btn-acilir-menu">KONULAR</button>
+    <ul id="menu-konular2">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Angular</li>
+    </ul>
+</nav>
+
+<input type="checkbox" id="chk-konular-menu" />
+<label for="chk-konular-menu"><span>KONULAR</span></label>
+<ul id="menu-konular3">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+    <li>Angular</li>
+</ul>
+<hr>
+<p class="pseudos" style="margin-top:50px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores error quia laboriosam ab et delectus, eaque eum, quos, ullam eius porro sapiente. Praesentium, magnam velit non, eaque deleniti, dolor amet cum eveniet minus officia aliquam aut. Sed rem tenetur aliquid facilis voluptate recusandae cum repudiandae aperiam, eligendi doloribus quisquam eum. Aliquid reiciendis labore voluptatibus dolorem perspiciatis dicta. Esse maiores placeat doloribus nostrum error? Molestias, modi. Eos, voluptas. Suscipit natus, necessitatibus illo assumenda quia voluptatibus asperiores vitae sequi deleniti numquam iusto quos nulla quisquam, tempore maxime amet dicta? Distinctio in suscipit sapiente praesentium laborum animi eius dolor aliquid, quidem harum accusantium corrupti accusamus facilis labore vero molestias, incidunt quisquam provident quaerat. Natus, aliquid accusantium nesciunt voluptates impedit architecto! Fugiat, placeat nobis unde, reiciendis eos dicta laboriosam sit porro odio expedita rerum repudiandae recusandae sequi modi debitis. Neque at minus, expedita est dolorem blanditiis harum qui excepturi molestiae totam optio ratione facilis!</p>
+
+<div class="kutu">
+	<h2>Notebook</h2>
+	<p>Lorem ipsum .....</p>
+	<div><p>145₺</p></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <!--<link rel="icon" type="image/x-icon" href="images/favicon.ico">-->
+        <title>Deneme Sayfası</title>
+        <style>
+            body{font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+            table{margin:12% auto;border:solid 1px #e2e2e2;background: url('images/3132.jpg') no-repeat; background-size: cover;
+            border-radius:20px;padding: 10px 20px;
+            }
+            .ortala{text-align: center;}
+            a{text-decoration: none;color:#000;font-weight: bold;}
+            .inputsatir{padding: 8px;}
+            input.metin{font-size: 16pt;padding: 5px;border-radius: 8px;}
+            input.girisbtn{font-size: 20pt;padding: 10px 25px;background-color: rgb(5, 163, 147);color:#FFF;
+                font-weight: bold; cursor: pointer;
+                border: solid 1px rgb(4, 137, 124); border-radius: 10%; margin-top:15px;
+            }
+            input.girisbtn:hover{background-color: rgb(20, 175, 159);}
+            .dolgu20{padding-top: 20px;}
+        </style>
+    </head>
+    <body>
+        <form name="signin" method="post" action="index.html">
+        <table>
+            <tr>
+                <th colspan="2"><h2>SİSTEME GİRİŞ</h2></th>
+            </tr>
+            <tr>
+                <td class="inputsatir">Kullanıcı Adı</td>
+                <td class="inputsatir"><input class="metin" type="text" name="username" placeholder="Kullanıcı Adınız" /></td>
+            </tr>
+            <tr>
+                <td class="inputsatir">Şifre</td>
+                <td class="inputsatir"><input class="metin" type="password" name="password" placeholder="Şifreniz" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="ortala"><input class="girisbtn" type="submit" name="gonder" value="GİRİŞ" /></td>
+            </tr>
+            <tr>
+                <td class="dolgu20"><input type="checkbox" name="hatirla" /> Beni Hatırla</td>
+                <td align="right"  class="dolgu20"><a href="sifrehatirlat.html">Şifremi Unuttum</a></td>
+            </tr>
+        </table>
+    </form>
+    </body>
+</html>

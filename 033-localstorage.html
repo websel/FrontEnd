@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="baslik">LocalStorage</p>
+    <input type="button" name="btnArtir" value="Artır" onclick="artir();"> 
+    <input type="button" name="btnAzalt" value="Azalt" onclick="azalt();"> 
+    <p id="result"></p>
+    <p id="result2"></p>
+    <hr />
+    <h5>Session Storage</h5>
+    <p id="result3"></p>
+    <hr />
+    <input type="text" name="ad" id="ad" /><br>
+    <input type="button" name="btn" value="Göster" onclick="deneme();">
+    <script>
+        // Store
+        localStorage.setItem("lastname", "Smith");
+        localStorage.lastname2 = "Öztürk";
+        sessionStorage.lastname3 = "Alptekin";
+        if (typeof(Storage) !== "undefined") {
+            if(localStorage.baslikFontBoyut)
+            {
+                document.getElementById("baslik").style.fontSize = localStorage.baslikFontBoyut + "px";
+            }
+            else{
+                localStorage.baslikFontBoyut = "12";
+                document.getElementById("baslik").style.fontSize = localStorage.baslikFontBoyut + "px";
+            }
+        }
+        localStorage.removeItem("lastname2");
+
+        // Retrieve
+        document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        document.getElementById("result2").innerHTML = localStorage.lastname2;
+        document.getElementById("result3").innerHTML = sessionStorage.lastname3;
+
+        function deneme()
+        {
+            var a = document.getElementById("ad").value;
+            localStorage.setItem("isim", a);
+            document.getElementById("result").innerHTML = localStorage.getItem("isim");
+        }
+
+        function artir(){
+            var fontBoyut = Number(localStorage.baslikFontBoyut) + 1;
+            localStorage.baslikFontBoyut = fontBoyut;
+            document.getElementById("baslik").style.fontSize = fontBoyut + "px";
+        }
+        function azalt(){
+            var fontBoyut = Number(localStorage.baslikFontBoyut) - 1;
+            localStorage.baslikFontBoyut = fontBoyut;
+            document.getElementById("baslik").style.fontSize = fontBoyut + "px";
+        }
+    </script>
+</body>
+</html>

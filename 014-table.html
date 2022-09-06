@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <!--<link rel="icon" type="image/x-icon" href="images/favicon.ico">-->
+        <title>HTML Table Tag</title>
+        <style>
+            table{border-collapse: collapse; width: 600px;}
+            th,td{border:1px solid #FF0000;}
+            tr .baslik-satir{background-color: #f0d3d3;}
+            .kutu{padding: 20px; width:300px; border: 5px; border-style: groove;}
+            .ortala{text-align: center;}
+            .genislik50{width: 50px;}
+            .genislik450{width: 450px;}
+            .genislik100{width: 100px;}
+            th{height: 80px;}
+        </style>
+    </head>
+    <body>
+        <h1>HTML TABLES</h1>
+        <div class="kutu">deneme</div>
+        <p>Bir tabloda kaç tane tr varsa o kadar satır vardır</p>
+        <p>Bir tr içinde kaç tane td / th varsa o kadar sütun vardır.</p>
+        <p>her bir satırda aynı sayıda td/th olmalı.</p>
+        <table> <!-- border="1"> -->
+            <tr class="baslik-satir"> <!-- table row - satır -->
+                <th class="genislik50">No</th> <!-- table head -->
+                <th class="genislik450">Ad Soyad</th>
+                <th class="genislik100">Okul No</th>
+            </tr>
+            <tr>
+                <td>1</td> <!-- table data -->
+                <td>Yasemin Demir</td>
+                <td class="ortala">589</td>
+            </tr>
+            <tr>
+                <td>2</td> <!-- table data -->
+                <td>Ali Çelik</td>
+                <td class="ortala">601</td>
+            </tr>
+            <tr>
+                <td>3</td> <!-- table data -->
+                <td>Hüseyin Can</td>
+                <td class="ortala">611</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        ul.arabalar,
+        ul.arabalar ul{list-style-type: none;}
+        ul.arabalar > li{line-height: 75px;}
+        ul.arabalar > li>ul>li{line-height: 25px;}
+        ul.arabalar li::before{content: '';background: url('images/ok-2.png') no-repeat;padding-right: 25px;}
+        ul.arabalar li ul li::before{content: '';background: url('images/ok-1.png') no-repeat;padding-right: 25px;}
+        .form-control{border-bottom:solid 2px #900; border-top:none; border-right:none; border-left: none; border-radius: 0;background-color: rgba(255,0,0,0.4);}
+        .form-control:focus{border-bottom: solid 1px navy;box-shadow: none !important;background-color: rgba(255,0,0,0.5) !important;outline: solid 2px #900;}
+        select{background-color: none !important; border:none !important;}
+        select:focus{box-shadow: none !important;}
+    </style>
+</head>
+<body>
+
+    <ul class="arabalar">
+        <li>AUDI
+            <ul>
+                <li>Q2</li>
+                <li>Q3</li>
+                <li>Q5</li>
+                <li>Q7</li>
+            </ul>
+        </li>
+        <li>MERCEDES
+            <ul>
+                <li>GLA</li>
+                <li>GLB</li>
+                <li>GLC</li>
+                <li>GLE</li>
+                <li>GLS</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+
+      <form name="form1" action="index.html" method="post">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" name="mesaj" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <select class="form-select w-auto" aria-label="Default select example">
+          <option selected>Four</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+      </div>
+    </form>
+    </div>
+  </div>
+  <div class="col-md-6"> </div>
+</div>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="container">
+        <h1>sayfa başlığı</h1>
+        <p class="text-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nemo sint dolorem a est! Officia optio odit natus repellendus ad voluptatibus vitae, omnis nulla beatae repudiandae maiores veritatis eveniet totam eligendi recusandae quibusdam itaque rem inventore porro consequatur corrupti nihil.</p>
+        <button class="btn btn-warning">Warning</button>
+        <ul class="d-none d-lg-block">
+            <li>Primary</li>
+            <li>secondary</li>
+            <li>success</li>
+            <li>warning</li>
+            <li>danger</li>
+            <li>info</li>
+            <li>light</li>
+            <li>dark</li>
+        </ul>
+        <ul class="d-none d-lg-block">
+            <li>xs - .col-</li>
+            <li>sm - .col-sm-</li>
+            <li>md - .col-md-</li>
+            <li>lg - .col-lg-</li>
+            <li>xl - .col-xl-</li>
+            <li>xxl - .col-xxl-</li>
+        </ul>
+
+        <div class="row bg-info">
+            <div class="col">1</div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+            <div class="col">4</div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 border">1</div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 border">2</div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 border">3</div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 border">4</div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 border">5</div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 border">6</div>
+        </div>
+    </div>
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

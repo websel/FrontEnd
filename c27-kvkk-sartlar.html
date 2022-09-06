@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS5 - Forms</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+      .box {
+    width: 500px;
+    margin: 200px 0;
+}
+
+.shape1{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: #0074d9;
+    border-radius: 80px;
+    float: left;
+    margin-right: -50px;
+}
+.shape2 {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: #0074d9;
+    border-radius: 80px;
+    margin-top: -30px;
+    float: left;
+}
+.shape3 {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: #0074d9;
+    border-radius: 80px;
+    margin-top: -30px;
+    float: left;
+    margin-left: -31px;
+}
+.shape4 {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: #0074d9;
+    border-radius: 80px;
+    margin-top: -25px;
+    float: left;
+    margin-left: -32px;
+}
+.shape5 {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: #0074d9;
+    border-radius: 80px;
+    float: left;
+    margin-right: -48px;
+    margin-left: -32px;
+    margin-top: -30px;
+}
+.shape6 {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: #0074d9;
+    border-radius: 80px;
+    float: left;
+    margin-right: -20px;
+    margin-top: -35px;
+}
+.shape7 {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: #0074d9;
+    border-radius: 80px;
+    float: left;
+    margin-right: -20px;
+    margin-top: -57px;
+}
+.float {
+    position: absolute;
+    z-index: 2;
+}
+
+.form {
+    margin-left: 145px;
+}
+    </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="container">
+      <div id="login-row" class="row justify-content-center align-items-center">
+          <div id="login-column" class="col-md-6">
+              <div class="box">
+                  <div class="shape1"></div>
+                  <div class="shape2"></div>
+                  <div class="shape3"></div>
+                  <div class="shape4"></div>
+                  <div class="shape5"></div>
+                  <div class="shape6"></div>
+                  <div class="shape7"></div>
+                  <div class="float">
+                      <form class="form" action="">
+                          <div class="form-group">
+                              <label for="username" class="text-white">Username:</label><br>
+                              <input type="text" name="username" id="username" class="form-control">
+                          </div>
+                          <div class="form-group">
+                              <label for="password" class="text-white">Password:</label><br>
+                              <input type="password" name="password" id="password" class="form-control">
+                          </div>
+                          <div class="form-group">
+                              <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <h1>Form</h1>
+    <form>
+      <div class="row">
+            <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email Address *</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Password *</label>
+                    <input type="password" class="form-control" id="pwd" required minlength="6">
+                  </div>
+            </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mb-3">
+            <label for="address" class="form-label">Address - 1</label>
+            <input type="text" class="form-control" id="address">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mb-3">
+            <label for="address2" class="form-label">Address - 2</label>
+            <input type="text" class="form-control" id="address2">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="city" placeholder="City">
+            <label for="city" class="form-label">City</label>
+          </div>
+        </div>
+        <div class="col-6 col-md-4">
+          <div class="form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+              <option selected>Select State</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <label for="floatingSelect">State</label>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="zip" placeholder="ZIP Code">
+            <label for="zip" class="form-label">ZIP Code</label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="chkRemindMe">
+        <label class="form-check-label small">
+          <a data-bs-toggle="modal" data-bs-target="#exampleModal" href="javascript:void();">
+            KVKK Şartlarını
+          </a> 
+           Okudum, Kabul ediyorum</label>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+
+      <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">KVKK Politikası</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        1. Kişisel Verilerin Toplanması, İşlenmesi ve İşleme Amaçları
+Kişisel verileriniz, Şirketimiz tarafından sağlanan hizmet ve Şirketimizin ticari faaliyetlerine bağlı olarak değişkenlik gösterebilmekle birlikte; otomatik ya da otomatik olmayan yöntemlerle, Şirketimiz birimleri ve ofisler, Topluluk Şirketleri, internet sitesi, sosyal medya mecraları, mobil uygulamalar ve benzeri vasıtalarla sözlü, yazılı ya da elektronik olarak toplanabilecektir. Şirketimiz ve Topluluk Şirketlerimizin sunduğu ürün ve hizmetlerden yararlandığınız müddetçe oluşturularak ve güncellenerek kişisel verileriniz işlenebilecektir. 
+
+Ayrıca, Şirket veya Topluluk Şirketlerimizin hizmetlerini kullanmak amacıyla çağrı merkezlerimizi veya internet sayfamızı kullandığınızda, Şirketimizi veya internet sitemizi ziyaret ettiğinizde, Şirketimizin düzenlediği eğitim, seminer veya organizasyonlara katıldığınızda kişisel verileriniz işlenebilecektir. 
+
+Toplanan kişisel verileriniz, Şirketimiz ve Topluluk Şirketlerimiz tarafından sunulan ürün ve hizmetlerden sizleri faydalandırmak için gerekli çalışmaların iş birimlerimiz tarafından yapılması, Şirketimiz ve Topluluk Şirketlerimiz tarafından sunulan ürün ve hizmetlerin sizlerin beğeni, kullanım alışkanlıkları ve ihtiyaçlarına göre özelleştirilerek sizlere önerilmesi, Şirketimizin, Topluluk Şirketlerimizin ve Şirketimizle iş ilişkisi içerisinde olan kişilerin hukuki ve ticari güvenliğinin temini (Şirketimiz tarafından yürütülen iletişime yönelik idari operasyonlar, Şirkete ait lokasyonların fiziksel güvenliğini ve denetimini sağlamak, Topluluk Şirketleri müşterileri değerlendirme/şikayet yönetimi süreçleri, itibar araştırma süreçleri, etkinlik yönetimi, hukuki uyum süreci, denetim, mali işler v.b.), Şirketimizin ticari ve iş stratejilerinin belirlenmesi ve uygulanması ve Şirketimizin insan kaynakları politikalarının yürütülmesinin temini amaçlarıyla KVK Kanunu’nun 5. ve 6. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları dahilinde işlenecektir. 
+
+2. İşlenen Kişisel Verilerin Kimlere ve Hangi Amaçla Aktarılabileceği
+Toplanan kişisel verileriniz; Şirketimiz ve Topluluk Şirketlerimiz tarafından sunulan ürün ve hizmetlerden sizleri faydalandırmak için gerekli çalışmaların iş birimlerimiz tarafından yapılması, Şirketimiz ve Topluluk Şirketlerimiz tarafından sunulan ürün ve hizmetlerin sizlerin beğeni, kullanım alışkanlıkları ve ihtiyaçlarına göre özelleştirilerek sizlere önerilmesi, Şirketimizin, Topluluk Şirketlerimizin ve Şirketimizle iş ilişkisi içerisinde olan kişilerin hukuki ve ticari güvenliğinin temini (Şirketimiz tarafından yürütülen iletişime yönelik idari operasyonlar, Şirkete ait lokasyonların fiziksel güvenliğini ve denetimini sağlamak, iş ortağı/müşteri/tedarikçi (yetkili veya çalışanları) değerlendirme süreçleri, itibar araştırma süreçleri, hukuki uyum süreci, denetim, mali işler v.b.), Şirketimizin ticari ve iş stratejilerinin belirlenmesi ve uygulanması ile Şirketimizin insan kaynakları politikalarının yürütülmesinin temini amaçlarıyla iş ortaklarımıza, tedarikçilerimize, Topluluk Şirketlerine, Şirket yetkililerine, hissedarlarımıza, kanunen yetkili kamu kurumları ve özel kişilere, KVK Kanunu’nun 8. ve 9. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları çerçevesinde aktarılabilecektir. 
+
+3. Kişisel Veri Toplamanın Yöntemi ve Hukuki Sebebi
+Kişisel verileriniz, her türlü sözlü, yazılı ya da elektronik ortamda, yukarıda yer verilen amaçlar doğrultusunda Şirketçe sunduğumuz ürün ve hizmetlerin belirlenen yasal çerçevede sunulabilmesi ve bu kapsamda Şirketimizin sözleşme ve yasadan doğan mesuliyetlerini eksiksiz ve doğru bir şekilde yerine getirebilmesi gayesi ile edinilir. Bu hukuki sebeple toplanan kişisel verileriniz KVK Kanunu’nun 5. ve 6. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları kapsamında bu metnin (1) ve (2) numaralı maddelerinde belirtilen amaçlarla da işlenebilmekte ve aktarılabilmektedir. 
+
+4. Kişisel Veri Sahibinin KVK Kanunu’nun 11. maddesinde Sayılan Hakları
+Kişisel veri sahipleri olarak, haklarınıza ilişkin taleplerinizi, işbu Aydınlatma Metni’nde aşağıda düzenlenen yöntemlerle Şirketimize iletmeniz durumunda Şirketimiz talebin niteliğine göre talebi en geç otuz gün içinde ücretsiz olarak sonuçlandıracaktır. Ancak, Kişisel Verileri Koruma Kurulunca bir ücret öngörülmesi halinde, Şirketimiz tarafından belirlenen tarifedeki ücret alınacaktır. Bu kapsamda kişisel veri sahipleri; 
+
+• Kişisel veri işlenip işlenmediğini öğrenme,
+• Kişisel verileri işlenmişse buna ilişkin bilgi talep etme,
+• Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,
+• Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme,
+• Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme ve bu kapsamda yapılan işlemin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,
+• KVK Kanunu’nun ve ilgili diğer kanun hükümlerine uygun olarak işlenmiş olmasına rağmen, işlenmesini gerektiren sebeplerin ortadan kalkması hâlinde kişisel verilerin silinmesini veya yok edilmesini isteme ve bu kapsamda yapılan işlemin kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,
+• İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme,
+• Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme haklarına sahiptir.
+
+KVK Kanunu’nun 13. maddesinin 1. fıkrası gereğince, yukarıda belirtilen haklarınızı kullanmak ile ilgili talebinizi, yazılı veya Kişisel Verileri Koruma Kurulu’nun belirlediği diğer yöntemlerle Şirketimize iletebilirsiniz. Kişisel Verileri Koruma Kurulu, şu aşamada herhangi bir yöntem belirlemediği için, başvurunuzu, KVK Kanunu gereğince, yazılı olarak Şirketimize iletmeniz gerekmektedir. Bu çerçevede Şirketimize KVK Kanunu’nun 11. maddesi kapsamında yapacağınız başvurularda yazılı olarak başvurunuzu ileteceğiniz kanallar ve usuller aşağıda açıklanmaktadır. 
+
+Yukarıda belirtilen haklarınızı kullanmak için kimliğinizi tespit edici gerekli bilgiler ile KVK Kanunu’nun 11. maddesinde belirtilen haklardan kullanmayı talep ettiğiniz hakkınıza yönelik açıklamalarınızı içeren talebinizi; www.XXXX.com adresindeki formu doldurarak, formun imzalı bir nüshasını Adres: xxxxxxxxxxxxxxxxxxxx adresine kimliğinizi tespit edici belgeler ile bizzat elden iletebilir, noter kanalıyla veya KVK Kanunu’nda belirtilen diğer yöntemler ile gönderebilir veya ilgili formu XXXX@XXXX.com adresine güvenli elektronik imzalı olarak iletebilirsiniz. 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </form>
+  </div>
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

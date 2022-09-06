@@ -1,0 +1,95 @@
+*{padding:0;margin:0;}
+a{text-decoration: none;}
+ul{list-style-type: none;}
+body{font-family: 'Barlow', sans-serif;}
+header.main{background-image: url('../../images/header-bg.png'); background-repeat: no-repeat; background-color: #FBA61A; background-size: cover;padding-bottom:100px;position: relative;}
+
+header.pages{background-image: url('../../images/Group100.jpg'); background-repeat: no-repeat; background-size: cover;padding-bottom:100px;position: relative;min-height: 500px;}
+
+header.about-page{background-color:#f8541c; padding-bottom:100px;position: relative;height: 500px;}
+
+
+.nav-link{color:#fff !important;padding-left:20px !important; padding-right: 20px !important;}
+.contact .nav-link,
+header.inner-aside .nav-link{color:#000 !important;}
+.mt-75{margin-top:75px;}
+.mt-100{margin-top:100px;}
+.mt-150{margin-top:150px;}
+.showcase-middle button{font-size: 1rem; font-weight: 600;}
+.showcase{overflow: hidden;}
+.noodle-cup1{margin-left: -150px;}
+.noodle-cup2{margin-right: -150px;}
+.px-6{padding-left:100px;padding-right: 100px;}
+.arrow-down{background-color: #FBA61A;width: 60px; height:60px; box-sizing: border-box;text-align: center;border-radius: 50%; border:solid 6px #fff;padding-top: 11px; position:absolute;bottom: -30px;left:50%;}
+section{margin-top:100px;}
+.ps-6{padding-left:4rem;}
+.ps-7{padding-left:5rem;}
+.ps-8{padding-left:6rem;}
+.ingridents li::before,
+.widget-sidebar li::before{content:' ';width:10px; height: 10px;display: inline-block; border-radius: 5px 0 5px 0;margin-right:5px; background-color:#FBA61A !important;}
+
+.story{background: url('../../images/Path-212.png') no-repeat;
+background-position: -150px; background-size: contain;}
+
+footer{background-color: #FBA61A;padding-top:100px;padding-bottom: 25px;color:#fff;}
+footer a{color:#fff !important;}
+.footer-kenarlik{border-color: #fbf3e5;}
+
+footer.inside{background-color: #f8541c !important;}
+.pages-left-path{position: absolute;top:50%;left:-45px;}
+.pages-right-path{position: absolute; top:420px; right:30px;}
+
+.accordion-button::after{content: '-' !important;font-weight: bold;width:20px; height: 20px; border-radius: 5px; display: inline-block;background-color: #FBA61A;text-align: center;color:#fff;background-image: none !important;}
+
+section.trynow{background-image: linear-gradient(to right, #a500cd,#530067);padding-top:100px;}
+.trynow button{background-color: #fff;color:#a100c7;position: relative;}
+.trynow button span{position: absolute; right:5px; top:7px; text-align:center; width: 45px; height: 45px; border-radius: 50%; background-color: #a100c7;color:#fff;padding-top: 10px;}
+
+.counter{background-color: #63018E;padding-top:100px;padding-bottom:100px;}
+.counter-number{font-size:3rem;}
+
+.about-1{background-color: #63018E;padding-top:50px;padding-bottom:75px;}
+
+.contact-form input:not([type="submit"]),
+.contact-form textarea, 
+.contact-form select{border:none; border-bottom:solid 1px red; border-radius: 0;margin-bottom: 15px;}
+.contact-form input:focus,
+.contact-form textarea:focus, 
+.contact-form select:focus{box-shadow: none;}
+.contact-form input[type="submit"]{transition:.4s ease-in-out;}
+.contact-form input[type="submit"]:hover{background-color: #FBA61A !important; color: #fff !important;}
+
+.widget-sidebar{color:#fff; border-radius: 25px; box-shadow: 5px 3px 6px rgba(0,0,0,0.6);padding: 25px 15px;}
+.widget-sidebar img{max-width: 50%;}
+.orange{background-color: #FE7501;}
+.purple{background-color: #a100c7;}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .noodle-cup1{margin-left: -100px;}
+    .noodle-cup2{margin-right: -100px;}
+}
+@media screen and (min-width:768px) and (max-width:991px) {
+    .noodle-cup1{margin-left: -70px;}
+    .noodle-cup2{margin-right: -70px;}
+    .features .product-image{margin-top:100px;}
+}
+@media screen and (min-width:577px) and (max-width:767px) {
+    .noodle-cup1{margin-left: -55px;}
+    .noodle-cup2{margin-right: -55px;}
+    .story-numbers{color:#000 !important;}
+    .trynow .row .col-md-6:nth-child(2){margin-top:50px;}
+    .about-page .about-main.mt-100{margin-top:10px;}
+    img.kesme-tahtasi{margin-top:60px;}
+    header.about-page{height: 400px;}
+}
+@media screen and (max-width:576px) {
+    .noodle-cup1{margin-left: -30px;}
+    .noodle-cup2{margin-right: -30px;}
+    .ps-8{padding-left:3rem;}
+    .story-numbers{color:#000 !important;}
+    .trynow button.px-6{padding-left: 80px !important; padding-right: 80px !important;}
+    .trynow .row .col-md-6:nth-child(2){margin-top:50px;}
+    .about-page .about-main.mt-100{margin-top:10px;}
+    img.kesme-tahtasi{width: 50% !important;}
+    .about-page .about-main{text-align:center;}
+}

@@ -1,0 +1,43 @@
+.bakery-features{background: url('images/c21-basak.jpg') no-repeat;
+    background-position: right bottom;
+    padding: 100px 0 150px 0;}
+    h2.section-title{font-family: 'Segoe Script', sans-serif;font-size: 3rem;font-weight: bold;}
+    .bakery-features .summary{padding: 30px 100px;}
+    .bakery-features h3{font-size: 1.1rem;font-weight: 700;}
+
+    .mid-banner{position: relative; top:-100px; left:0;}
+    .mid-banner img{max-width: 100%;}
+
+    @media screen and (max-width:767px) {
+        .bakery-features .summary{padding: 30px;}
+        .bakery-features{background-size: 207px 225px;}
+        .mid-banner{top:-70px;}
+    }
+    @media screen and (max-width:576px) {
+        .mid-banner{top:-40px;}
+    }
+    .kutu{
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-right: 10px;
+    }
+    .kutu:hover{background-color: #fab000;}
+    .e0{text-align: center;color:#cccccc;font-weight: 600;font-size: 0.8em;background-color: #ededed;padding-top: 4px;}
+    .e1{background: url('images/breads-sprite.png') no-repeat -101px 0px #ededed;transition:.6s;}
+    .e2{background: url('images/breads-sprite.png') no-repeat 0px 0px #ededed}
+    .e3{background: url('images/breads-sprite.png') no-repeat -51px 0px #ededed;}
+    .e4{background: url('images/breads-sprite.png') no-repeat -151px 0px #ededed;}
+    .e5{background: url('images/breads-sprite.png') no-repeat -201px 0px #ededed;}
+    .e6{background: url('images/breads-sprite.png') no-repeat -251px 0px #ededed;}
+    .e7{background: url('images/breads-sprite.png') no-repeat -301px 0px #ededed;}
+
+    .e0:hover{color:#fff;}
+    .e1:hover{background-position: -101px -51px;}
+    .e2:hover{background-position: 0px -51px}
+    .e3:hover{background-position: -51px -51px;}
+    .e4:hover{background-position: -151px -51px;}
+    .e5:hover{background-position: -201px -51px;}
+    .e6:hover{background-position: -251px -51px;}
+    .e7:hover{background-position: -301px -51px;}

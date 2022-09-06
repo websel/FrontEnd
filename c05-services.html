@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body{font-family: 'Oswald', sans-serif;}
+        .header-wrapper{width: 100%;border-bottom: solid 1px #ebe9e9;box-shadow: 3px 4px 6px rgba(0,0,0,0.2);}
+        header{width: 85%;margin: 0 auto;}
+        .logo{display: inline;width: 20%;height: 80px;}
+        .logo img{height: 80px;}
+        nav{float:right;width: 80%; height: 50px;text-align: right;margin-top:30px;}
+        nav ul{list-style-type: none;margin:0;padding: 0;}
+        nav ul li{display: inline;padding: 5px;}
+        nav ul li a{color:#272727;text-decoration: none; padding: 5px 10px; font-size: 15px;font-weight: 300;letter-spacing: 4px;text-transform: uppercase;}
+        nav ul li a:hover{color:#b19777}
+        nav ul li a.active{color: #b19777 !important}
+        #services h1.title{font-size: 3em !important;letter-spacing: 10px;font-weight: 400;text-transform: uppercase;}
+        section{width: 70%; margin: 0 auto;}
+        .title span{color: #b19777;}
+        #services article{width: 24%;margin-right:3%;display: inline-block;padding: 3%;}
+        #services article img{width: 65px;}
+        #services article h2{font-weight: 300;letter-spacing: 5px;text-transform: uppercase;font-size: 16px;}
+        #services article p{font-weight: 300;}
+        #services article:hover{background:#efefef}
+        #services article:hover h2{font-weight: 600;}
+        #services article:hover img{opacity: 0.2;}
+        .margin-ust-50{margin-top:50px;}
+        .margin-ust-75{margin-top:75px;}
+        /* <section id="services" class="margin-ust-75"> 
+         alttaki service-row
+         <div class="service-row margin-ust-50">   
+            <li><a href="#" class="active">Hizmetler</a></li>*/
+    </style>
+</head>
+<body>
+    <div class="header-wrapper">
+        <header>
+            <div class="logo">
+                <img src="images/logo.png" alt="Bauen Logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">ANASAYFA</a></li>
+                    <li><a href="#">Ürünler</a></li>
+                    <li><a href="#" class="active">Hizmetler</a></li>
+                    <li><a href="#">Referanslar</a></li>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+    <section id="services" class="margin-ust-75">
+        <h1 class="title">HİZMETLERİMİZ</h1>
+        <div class="service-row">
+            <article>
+                <img src="images/icons/icon-1.png" alt="architecture icon" />
+                <h2>Architecture</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae fugit voluptatibus asperiores sunt exercitationem nam reiciendis blanditiis placeat rerum animi.</p>
+            </article>
+            <article>
+                <img src="images/icons/icon-2.png" alt="Interior Design icon" />
+                <h2>Interior Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae fugit voluptatibus asperiores sunt exercitationem nam reiciendis blanditiis placeat rerum.</p>
+            </article>
+            <article>
+                <img src="images/icons/icon-3.png" alt="Urban Design icon" />
+                <h2>Urban Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae fugit voluptatibus asperiores sunt exercitationem nam reiciendis blanditiis.</p>
+            </article>
+        </div>
+        <div class="service-row margin-ust-50">
+            <article>
+                <img src="images/icons/icon-4.png" alt="Planning icon" />
+                <h2>Planning</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae fugit voluptatibus asperiores sunt exercitationem nam reiciendis blanditiis placeat rerum animi.</p>
+            </article>
+            <article>
+                <img src="images/icons/icon-5.png" alt="3D Modelling icon" />
+                <h2>3D Modelling</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae fugit voluptatibus asperiores sunt exercitationem nam reiciendis blanditiis placeat rerum.</p>
+            </article>
+            <article>
+                <img src="images/icons/icon-6.png" alt="Decor Plan icon" />
+                <h2>Decor Plan</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae fugit voluptatibus asperiores sunt exercitationem nam reiciendis blanditiis.</p>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

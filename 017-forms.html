@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <!--<link rel="icon" type="image/x-icon" href="images/favicon.ico">-->
+        <title>Formlar</title>
+        <style>
+            input,select{margin-top:30px;}
+        </style>
+    </head>
+    <body>
+        <h1>HTML Forms</h1>
+        <form name="form1" method="get" action="index.html">
+            Adınız: <input type="text" name="adiniz" required="required" maxlength="20" /><br>
+            Soyadınız: <input type="text" name="soyadiniz" /><br>
+            Şifre: <input type="password" name="sifre" required="required" minlength="6" /><br>
+            Email: <input type="email" name="email" required="required" placeholder="E-posta Adresinizi Yazınız" /><br>
+            Telefon: <input type="tel" name="telefon" value="0212 255 55 55" readonly="readonly" /><br>
+            Yaş: <input type="number" name="yas" min="0" max="100" step="4" /><br>
+            Cinsiyet: <input type="radio" name="cinsiyet" value="Erkek"  /> Erkek  <input type="radio" name="cinsiyet" value="Kadın" checked="checked" /> Kadın<br>
+            KVKK Metni: <input type="checkbox" name="kvkk" checked="checked" /> KVKK Aydınlatma Metnini okudum, kabul ediyorum.<br>
+            Marka Seç: <select name="marka">
+                <option value="0">Seçiniz</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="BMW">BMW</option>
+                <option value="Audi" selected="selected">Audi</option>
+                <option value="Volvo">Volvo</option>
+                <option value="Porche">Porche</option>
+            </select><br>
+            Mesajınız<br>
+            <textarea name="mesaj" rows="5" cols="50"></textarea><br>
+            <input type="submit" name="gonderbtn" value="GÖNDER" />
+        </form>
+    </body>
+</html>

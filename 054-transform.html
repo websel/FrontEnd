@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform</title>
+    <style>
+        .kutu{width: 200px;font-size: 1.5em;border:solid 1px;padding:20px; }
+        .pembe{background-color: antiquewhite;}
+        .kirmizi{background-color: red;}
+        .mavi{background-color: blue;}
+        .translate{transform: translate(100px,10px); transition: all .5s ease-in-out;}
+        .translatex{transform: translatex(100px);}
+        .translatey{transform: translatey(50px);}
+        .rotate{transform: rotate(20deg); transition: transform .5s ease-in-out, color 3s linear ;}
+        .rotatex{transform: rotatex(180deg);}
+        .rotatey{transform: rotatey(180deg);}
+        .scale{transform: scale(0.8); transition: all .5s ease-in-out;}
+        .scalex{transform: scalex(1.2);}
+        .scaley{transform: scaley(1.2);}
+        .scale:hover{transform: rotate(15deg) scale(1.2);}
+        .translate:hover{transform: translate(200px,10px);}
+        .rotate:hover{transform: rotate(0deg);color:yellow}
+    </style>
+</head>
+
+<body>
+    <div class="kutu pembe translate">Merhaba</div>
+    <div class="kutu pembe translatex">Merhaba</div>
+    <div class="kutu pembe translatey">Merhaba</div>
+    <div class="kutu kirmizi rotate">Merhaba</div>
+    <div class="kutu kirmizi rotatex">Merhaba</div>
+    <div class="kutu kirmizi rotatey">Merhaba</div>
+    <div class="kutu mavi scale">Merhaba</div>
+    <div class="kutu mavi scalex">Merhaba</div>
+    <div class="kutu mavi scaley">Merhaba</div>
+</body>
+
+</html>

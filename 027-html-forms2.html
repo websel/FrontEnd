@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+</head>
+<body>
+    <form name="form1" method="get" action="">
+        <label for="adiniz">ADINIZ</label><br>
+        <input type="text" name="adiniz" id="adiniz" autocomplete="off" /><br><br>
+        
+        <input type="checkbox" name="kvkk" id="kvkk" /><label for="kvkk">KVKK Metnini Okudum</label><br><br>
+        <br>
+        <fieldset>
+            <legend>Eğitim Bilgileri</legend>
+            <label for="univ">Mezun Old. Üniv.</label><br>
+            <input type="text" name="univ" id="univ" disabled="disabled" /><br><br>
+
+            <label for="bolum">Mezun Old. Bölüm.</label><br>
+            <input type="text" name="bolum" id="bolum" size="50" /><br><br>
+
+            <label for="yil">Mezuniyet Yılı</label><br>
+            <input type="number" name="yil" id="yil" min="1980" max="2050" /><br>
+
+            <label for="phone">Telefon No</label><br>
+            <input type="tel" name="phone" id="phone" placeholder="212 234 56 78" pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" autofocus="autofocus">
+            <!-- [A-Za-z] büyük ve küçük harfler -->
+
+        </fieldset>
+
+        <input list="courses">
+        <datalist id="courses">
+            <option value="Web Development"></option>
+            <option value="Software Development"></option>
+            <option value="Mobile App Development"></option>
+            <option value="Digital Marketing"></option>
+            <option value="Cyber Security"></option>
+        </datalist>
+
+        <select name="courses2">
+            <option value="1">Web Development</option>
+            <option value="2">Software Development</option>
+            <option value="3" selected="selected">Mobile App Development</option>
+            <option value="4">Digital Marketing</option>
+            <option value="5">Cyber Security</option>
+        </select>
+        
+        <input type="submit" name="btngonder" value="Gönder" />
+    </form>
+
+    <ol start="4" type="I">
+        <li>Web Development
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+            </ul>
+        </li>
+        <li>Software Development</li>
+        <li>Mobile App Development</li>
+        <li>Digital Marketing</li>
+        <li>Cyber Security</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Tasarım</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        #flex-horizontal-menu{width: 70%;margin:0 auto;}
+        .ozellikler{display: flex;gap:30px;margin-top:40px}
+.ozellikler article{flex:1;text-align: left;}
+.ozellikler article p{margin-top:10px}
+.ozellik-border article{border:solid 2px #c0bfbf; border-radius: 10px;padding: 25px;}
+
+/* .ozellikler article h3{
+    position: relative;
+    top:10px;
+    left: 70px;} */
+/* Position: Absolute
+ .ozellikler article{position: relative;}
+.ozellikler article h3{
+    position: absolute;
+    left:10px;
+    bottom:0;} */
+/* Position: fixed */
+/* .ozellikler{height: 200vh;}
+.ozellikler article h3{
+    position: fixed;
+top: 0;} */
+/* Position:sticky */
+/* .ozellikler{height: 200vh;}
+.ozellikler article h3{
+    position: sticky;
+    top:0;} */
+    .ozellikler article{position:relative;}
+    .ozellikler span{position: absolute;top:50%;right:-7px;cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div class="wrapper" id="flex-horizontal-menu">
+        <div class="ozellikler">
+            <article>
+                <img src="images/icons/social.svg" alt="Responsive Layout icon" width="64" />
+                <h3>Responsive Layout</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde adipisci praesentium atque exercitationem eaque.</p>
+                <span><i class="fa-solid fa-circle-xmark"></i></span>
+            </article>
+            <article>
+                <img src="images/icons/experience.svg" alt="Retina Ready Graphics icon" width="64" />
+                <h3>Retina Ready Graphics</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore error aspernatur, est minus ducimus repellat harum reiciendis deserunt!</p>
+                <span><i class="fa-solid fa-circle-xmark"></i></span>
+            </article>
+            <article>
+                <img src="images/icons/content_marketing.svg" alt="Powerfull Performance icon" width="64" />
+                <h3>Powerfull Performance</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde adipisci praesentium atque exercitationem eaque.</p>
+                <span><i class="fa-solid fa-circle-xmark"></i></span>
+            </article>
+            <article>
+                <img src="images/icons/optimizing.svg" alt="Optimised Codes icon" width="64" />
+                <h3>Optimised Codes</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore error aspernatur, est minus ducimus repellat harum reiciendis!</p>
+                <span><i class="fa-solid fa-circle-xmark"></i></span>
+            </article>
+        </div>
+
+        <div class="ozellikler ozellik-border">
+            <article>
+                <img src="images/icons/social.svg" alt="Responsive Layout icon" width="64" />
+                <h3>Responsive Layout</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde adipisci praesentium atque exercitationem eaque.</p>
+                <span><i class="fa-solid fa-circle-xmark"></i></span>
+            </article>
+            <article>
+                <img src="images/icons/experience.svg" alt="Retina Ready Graphics icon" width="64" />
+                <h3>Retina Ready Graphics</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore error aspernatur, est minus ducimus repellat harum reiciendis deserunt!</p>
+                <span><i class="fa-solid fa-circle-xmark"></i></span>
+            </article>
+            <article>
+                <img src="images/icons/content_marketing.svg" alt="Powerfull Performance icon" width="64" />
+                <h3>Powerfull Performance</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde adipisci praesentium atque exercitationem eaque.</p>
+                <span><i class="fa-solid fa-circle-xmark"></i></span>
+            </article>
+            <article>
+                <img src="images/icons/optimizing.svg" alt="Optimised Codes icon" width="64" />
+                <h3>Optimised Codes</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore error aspernatur, est minus ducimus repellat harum reiciendis!</p>
+                <span><i class="fa-solid fa-circle-xmark"></i></span>
+            </article>
+        </div>
+    </div>
+</body>
+
+</html>

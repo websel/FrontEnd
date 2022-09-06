@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Examples</title>
+    <style>
+        .gingerbread .body {
+  fill: #cd803d;
+}
+
+.gingerbread .eye {
+  fill: white;
+}
+
+.gingerbread .mouth {
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
+}
+
+.gingerbread .limb {
+  stroke: #cd803d;
+  stroke-width: 35px;
+  stroke-linecap: round;
+}
+    </style>
+</head>
+<body>
+    <h2>ÇAM AĞACI</h2>
+  <svg width="200" height="200" viewBox="-100 -100 200 260">
+    <polygon points="0,0 80,120 -80,120" fill="#234236" />
+    <polygon points="0,-40 60,60 -60,60" fill="#0C5C4C" />
+    <polygon points="0,-80 40,0 -40,0" fill="#38755B" />
+    <rect x="-20" y="120" width="40" height="30" fill="brown" />
+  </svg>
+<h2>KURABİYE</h2>
+<svg class="gingerbread" width="200" height="200" viewBox="-100 -100 200 200">
+    <circle class="body" cx="0" cy="-50" r="30" />
+  
+    <circle class="eye" cx="-12" cy="-55" r="3" />
+    <circle class="eye" cx="12" cy="-55" r="3" />
+    <rect class="mouth" x="-10" y="-40" width="20" height="5" rx="2" />
+  
+    <line class="limb" x1="-40" y1="-10" x2="40" y2="-10" />
+    <line class="limb" x1="-25" y1="50" x2="0" y2="-15" />
+    <line class="limb" x1="25" y1="50" x2="0" y2="-15" />
+  
+    <circle class="button" cx="0" cy="-10" r="5" />
+    <circle class="button" cx="0" cy="10" r="5" />
+  </svg>
+    <h2>YILDIZ</h2>
+    <svg width="200" height="200" viewBox="-100 -100 200 200">      
+        <g transform="translate(0 5)">
+          <g>
+            <polygon points="0,0 36,-50 0,-100" fill="#EDD8B7" />
+            <polygon points="0,0 -36,-50 0,-100" fill="#E5C39C" />
+          </g>
+          <g transform="rotate(72)">
+            <polygon points="0,0 36,-50 0,-100" fill="#EDD8B7" />
+            <polygon points="0,0 -36,-50 0,-100" fill="#E5C39C" />
+          </g>
+          <g transform="rotate(-72)">
+            <polygon points="0,0 36,-50 0,-100" fill="#EDD8B7" />
+            <polygon points="0,0 -36,-50 0,-100" fill="#E5C39C" />
+          </g>
+          <g transform="rotate(144)">
+            <polygon points="0,0 36,-50 0,-100" fill="#EDD8B7" />
+            <polygon points="0,0 -36,-50 0,-100" fill="#E5C39C" />
+          </g>
+          <g transform="rotate(-144)">
+            <polygon points="0,0 36,-50 0,-100" fill="#EDD8B7" />
+            <polygon points="0,0 -36,-50 0,-100" fill="#E5C39C" />
+          </g>
+        </g>
+      </svg>
+
+    <h2>KAR TANESİ</h2>
+    <svg width="200" height="200" viewBox="-100 -100 200 200">
+        <defs>
+          <path
+            id="branch"
+            d="
+              M 0 0 L 0 -90
+              M 0 -20 L 20 -34
+              M 0 -20 L -20 -34
+              M 0 -40 L 20 -54
+              M 0 -40 L -20 -54
+              M 0 -60 L 20 -74
+              M 0 -60 L -20 -74"
+            stroke="#E5C39C"
+            stroke-width="5"
+          />
+        </defs>
+      
+        <use href="#branch" />
+        <use href="#branch" transform="rotate(60)" />
+        <use href="#branch" transform="rotate(120)" />
+        <use href="#branch" transform="rotate(180)" />
+        <use href="#branch" transform="rotate(240)" />
+        <use href="#branch" transform="rotate(300)" />
+      </svg>
+</body>
+</html>

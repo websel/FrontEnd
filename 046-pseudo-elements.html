@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo Elements</title>
+    <link rel="stylesheet" href="assets/css/myStyles.css" />
+</head>
+<body style="margin-left:50px;">
+
+    <form id="form-pseudo" name="form1" method="get" action="index.html">
+        Adınız: <input type="text" name="adiniz" required="required" maxlength="20" autocomplete="off" /><br>
+
+        Soyadınız: <input type="text" name="soyadiniz" autocomplete="off" /><br>
+
+        Şifre: <input type="password" name="sifre" required="required" minlength="6" /><br>
+
+        Email: <input type="email" name="email" required="required" placeholder="E-posta Adresinizi Yazınız" autocomplete="off" /><br>
+
+        Telefon: <input type="tel" name="telefon" value="0212 255 55 55" readonly="readonly" /><br>
+
+        Yaş: <input type="number" name="yas" min="0" max="100" step="4" />
+
+        <input type="checkbox" name="kvkk" /> <label for="kvkk">KVKK Metnini Okudum.</label>
+
+        <input type="submit" name="gonderbtn" value="GÖNDER" />
+    </form>
+
+    <nav class="nav-c16" style="margin-top:100px;">
+        <ul>
+            <li><a href="#">Ana Sayfa</a></li>
+            <li><a href="#">Ürünler</a></li>
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+    <p class="pseudo2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem, tenetur praesentium consequatur quibusdam facilis, ratione doloremque aspernatur odit unde voluptatibus explicabo numquam quasi distinctio earum nesciunt est repellat. Placeat eveniet sit laborum, ex minus velit architecto sed modi consequuntur rem voluptates aut corrupti voluptatum praesentium distinctio accusantium, amet excepturi doloribus ipsum voluptatibus ducimus assumenda deleniti! Sequi incidunt a placeat molestias excepturi nemo, est repellat neque possimus perspiciatis in ex illo minima sed tempore facilis nobis.</p>
+
+    <p class="pseudo3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis culpa vitae molestiae in! Cum omnis doloremque sunt laboriosam ullam exercitationem, officiis dolorem consequuntur, quaerat quibusdam, minima quam ex ipsum fuga eius nesciunt dicta. Odio illo mollitia beatae nisi sed. Iste rem, iusto nihil in eum doloribus nisi dolorem distinctio, alias accusamus nulla quia vero ab delectus est placeat ipsa aperiam explicabo sequi, laborum eius. Expedita itaque odit totam quo, esse iusto obcaecati illo repellat recusandae temporibus aut, ratione aspernatur doloribus sequi corrupti officiis alias sint, perferendis id neque magni pariatur. Sunt excepturi omnis laboriosam, iusto ipsum beatae et a incidunt!</p>
+
+    <hr class="ust-alt-margin">
+    <ul id="dersler">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Angular</li>
+    </ul>
+    <hr class="ust-alt-margin">
+    <ol id="dersler2">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Angular</li>
+    </ol>
+    <hr class="ust-alt-margin" />
+    <a href="ekle.html"><button class="btn-ekle">EKLE</button></a>
+    <hr class="ust-alt-margin">
+
+    <label for="chkButon">GÖNDER</label>
+    <input type="checkbox" name="chkButon" id="chkButon" />
+    <h3 class="gonderildi">GÖNDERİLDİ...</h3>
+    <hr class="ust-alt-margin">
+
+    
+    <input type="checkbox" name="chkButon2" id="chkButon2" />
+    <label for="chkButon2">Mod Değiştir</label>
+    <div class="mod-degistir">&nbsp;</div>
+
+
+    <div class="kutu2">
+        <h2>Başlık</h2>
+        <p>Lorem ipsum....</p>
+        <div><p>145₺</p></div>
+    </div>
+
+    <div class="kutu3">
+        <h2>Başlık 2</h2>
+    </div>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <h4>Başlık 3</h4>
+    <a href="#">5</a>
+
+    body > section:nth-child(3)
+    section#top-bar img
+    #top-bar nav a
+    .sosyal-medya > a
+    section > nav li
+    .kutu > img ~ span
+    #top-bar nav li:not(:first-child)
+    .hizmetler .kutu>h3::before{content:'<'}
+</body>
+</html>

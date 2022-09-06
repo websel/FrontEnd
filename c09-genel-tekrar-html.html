@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{padding: 0;list-style-type: none;}
+        ul li{float: left;}
+        ul li a{display: inherit; background-color: #5894d9;width:150px;text-align: center;
+            height: 33px;color:#FFF;text-decoration: none;font-size: 20px;padding-top: 12px;
+            transition: .3s ease-out;
+        }
+        ul li:not(:last-child){border-right: solid 2px #4377b4;}
+        ul li a:hover{background-color: #4377b4;}
+        h1{clear:both;}
+        select{width: 100%;}
+    </style>
+</head>
+<body>
+    <h2>SIRASIZ LİSTE</h2>
+    <div>
+    <ul type="square">
+        <li><a href="#">Anasayfa</a></li>
+        <li><a href="#">Ürünler</a></li>
+        <li><a href="#">Hizmetler</a></li>
+        <li><a href="#">Biten Projeler</a></li>
+        <li><a href="#">Hakkımızda</a></li>
+        <li><a href="#">İletişim</a></li>
+    </ul>
+</div>
+    <h1>Sıralı Liste</h1>
+    <ol type="A" start="5">
+        <li>Anasayfa</li>
+        <li>Ürünler</li>
+        <li>Hizmetler</li>
+        <li>Biten Projeler</li>
+        <li>Hakkımızda</li>
+        <li>İletişim</li>
+    </ol>
+
+    <h2>FORMLAR</h2>
+    <form name="form1" method="post" action="index.html">
+        <table>
+            <tr>
+                <td><label for="username">Kullanıcı Adı:</label></td>
+                <td>
+                    <input type="text" name="username" required="required" placeholder="Kullanıcı Adınız" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">Şifre:</label></td>
+                <td>
+                    <input type="password" name="password" required="required" placeholder="Şifreniz" minlength="6" maxlength="20" />
+                </td>
+            </tr>
+            <tr>
+                <td><label for="age">Yaşınız:</label></td>
+                <td>
+                    <input type="number" name="age" placeholder="Yaşınız" step="1" min="18" max="120" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="hatirla" />
+                    <label for="hatirla"> Beni Hatırla</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="lesson">Ders:</label></td>
+                <td>
+                    <select name="lesson">
+                        <option>Mat</option>
+                        <option>Türkçe</option>
+                        <option>Fen</option>
+                        <option>Sosyal</option>
+                        <option>Din</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="btngonder" value="GÖNDER" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <!--<link rel="icon" type="image/x-icon" href="images/favicon.ico">-->
+        <title>HTML Table Tag - Rowspan</title>
+        <style>
+            table{border-collapse: collapse;width:500px}
+            th,td{border:1px solid #000;}
+            h1{font-size: 100px;}
+
+            @media screen and (max-width:414px){
+                table{display: none;}
+                h1{font-size: 36px;}
+            }
+            @media screen and (min-width:414px) and (max-width:768px){
+                table{width:100%}
+                h1{font-size: 36px;}
+            }
+        </style>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    </head>
+    <body>
+        <h1>ROWSPAN ÖRNEK</h1>
+        <table> <!-- border="1"> -->
+            <tr> <!-- table row - satır -->
+                <td rowspan="4">AYLAR</td> <!-- table head -->
+                <td>OCAK</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>ŞUBAT</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>MART</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>Nisan</td>
+                <td>325</td>
+            </tr>
+        </table>
+    </body>
+</html>

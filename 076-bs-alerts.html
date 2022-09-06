@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="alert alert-danger" role="alert">Kullanıcı Adı veya Şifre Hatalı. <a href="home.html" class="alert-link">Anasayfaya Dön</a></div>
+        <div class="alert alert-warning" role="alert">Lütfen Kullanıcı Adını Yazınız.  <a href="home.html" class="alert-link">Anasayfaya Dön</a></div>
+        <div class="alert alert-success" role="alert">Satın Alım işlemi başarıyla tamamlandı.  <a href="home.html" class="alert-link">Anasayfaya Dön</a></div>
+        <div class="alert alert-primary" role="alert">Primary mesajı burada yer alsın</div>
+        <div class="alert alert-secondary" role="alert">Secondary mesajı burada yer alsın</div>
+        <div class="alert alert-info" role="alert">info mesajı burada yer alsın</div>
+        <div class="alert alert-light" role="alert">Light mesajı burada yer alsın</div>
+        <div class="alert alert-dark" role="alert">Dark mesajı burada yer alsın</div>
+
+        <hr>
+
+        <div id="liveAlertPlaceholder"></div>
+        <button type="button" class="btn btn-primary" id="liveAlertBtn">Mesajı Görüntüle</button>
+    </div>
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<script>
+    const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+const alert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper)
+}
+
+const alertTrigger = document.getElementById('liveAlertBtn')
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', () => {
+    alert('Nice, you triggered this alert message!', 'danger')
+  })
+}
+</script>
+
+</body>
+</html>
