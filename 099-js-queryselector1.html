@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS QuerySelector</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        .mor{color:violet;}
+        .mor-bg{background-color: violet;}
+        .name{font-size:2rem;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JS <span>QuerySelector</span></h1>
+        <p>DOM içerisinde tanımlanan sınıfı seçer.</p>
+        <h2 class="altbaslik">DOM - Document Object Model</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident beatae asperiores porro, itaque veniam sunt tempora aspernatur facilis, quis eos recusandae temporibus dolores magni eveniet repudiandae? Suscipit molestiae nemo explicabo odio consequatur ea voluptatibus autem, dolorum nam optio temporibus aperiam ex fugit pariatur maxime quisquam illum enim quibusdam accusamus placeat in? Voluptas iste blanditiis voluptatem? Corrupti exercitationem illum dolor! Delectus.</p>
+        <h2 class="altbaslik">Query Selector</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident beatae asperiores porro, itaque veniam sunt tempora aspernatur facilis, quis eos recusandae temporibus dolores magni eveniet repudiandae? Suscipit molestiae nemo explicabo odio consequatur ea voluptatibus autem, dolorum nam optio temporibus aperiam ex fugit pariatur maxime quisquam illum enim quibusdam accusamus placeat in? Voluptas iste blanditiis voluptatem? Corrupti exercitationem illum dolor! Delectus.</p>
+
+        <div class="name">Gökhan Çelik</div>
+        <div id="mesaj"></div>
+    </div>
+<script>
+    let isim = document.querySelector(".name").innerText; // name class'lı element içerisindeki text'i al ve isim değişkenine ata
+    document.querySelector("#mesaj").innerText = "Merhaba " + isim;
+
+    document.querySelector("#mesaj").innerHTML = `Merhaba <strong>${isim}</strong>`;
+
+    let h1baslik = document.querySelector("h1").innerText;
+    let h1baslik2 = document.querySelector("h1").innerHTML;
+    document.querySelector("h1").innerText = "ASP.NET QuerySelector";
+    document.querySelector("h1").innerHTML = "ASP.NET <span class='text-primary'>QuerySelector</span>";
+
+    console.log(h1baslik);
+    console.log(h1baslik2);
+
+    //document.querySelector(".altbaslik").classList.add("mor");
+    document.querySelector(".altbaslik").classList.add("mor-bg");
+    //document.querySelector(".altbaslik").classList.remove("mor");
+
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

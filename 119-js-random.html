@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Select City</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">Ürün seç</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="slcOgrenciler">Öğrenci Seç</label>
+                    <select id="slcOgrenciler" class="form-select">
+                        <option value="158">Yusuf Çetinkaya</option> <!-- 0.index -->
+                        <option value="171">Elif Nur Kazancı</option> <!-- 1.index -->
+                        <option value="174">Erkan Can Kargın</option> <!-- 2.index -->
+                        <option value="184">Kağan Akyürek</option> <!-- 3.index 4. Element -->
+                        <option value="190">Muhammed Arda Arcan</option>
+                        <option value="191">Elif Buse Özkan</option> <!-- 6. Element - 5.index -->
+                        <option value="195">Rabia Danış</option>
+                        <option value="214">Feride Ceren Ünsal</option>
+                        <option value="218">Cemal Yiğit Açıkalın</option>
+                        <option value="220">Pelin Öztürk</option>
+                        <option value="194">Yağmur Kara</option>
+                        <option value="227">Enes Cesuryürek</option>
+                        <option value="260">Fatih Mehmet Çelik</option>
+                        <option value="312">Furkan Enes Avcı</option>
+                        <option value="314">Rabia Gülsün</option>
+                        <option value="317">Samet Yılmaz</option>
+                        <option value="321">Mehmet Galip Sarıgül</option>
+                        <option value="330">Serap Kızılkaya</option>
+                        <option value="342">Elif Güney</option>
+                        <option value="343">Orhan Tekin</option>
+                        <option value="344">Süleyman Olgun</option>
+                    </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtIndirimOrani" class="form-label">İndirim Oranı Giriniz</label>
+                        <input type="number" class="form-control" id="txtIndirimOrani" aria-describedby="indirim">
+                    </div>
+                    <button type="button" id="btnGonder" onclick="gonder()" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="mesaj"></div>
+            </div>
+        </div>
+    </div>
+<script>
+
+    var rastgeleSayi = Math.random();  // 0 ile 1 arasında birsayı üreten bir methoddur. 0,3435678 gibi
+    console.log(rastgeleSayi);
+
+    var sayi = rastgeleSayi * 10;  // 3.435678  gibi bir sayı üretir
+    console.log(sayi);
+
+    var roundSayi = Math.round(sayi); // 3 üretir. 3,4'ü aşağı yuvarlar. 3,56 gibi bir rakam olsaydı yukarı yuvarlayıp 4 üretirdi. 
+    console.log(roundSayi);
+
+    var floorSayi = Math.floor(sayi); // 3 üretir. Aşağı yuvarlar.
+    console.log(floorSayi);
+
+    var yeniFloorSayi = Math.floor(Math.random() * 100); // 0 ile 99 arası (99 dahil) bir sayı üretir
+
+    var yeniFloorSayi2 = Math.floor(Math.random() * 100)+1; // 1 ile 100 arası (100 dahil) bir sayı üretir
+
+    var yeniFloorSayi3 = Math.floor(Math.random() * 99)+1; // 1 ile 99 arası (99 dahil) bir sayı üretir
+    console.log("1 ile 99 arası rastgele sayı: " + yeniFloorSayi3);
+
+    var yeniFloorSayi4 = 0;
+    for(var x=0;x<10;x++){
+
+        yeniFloorSayi4 = Math.floor(Math.random() * 51) + 50; // 50 ile 100 arası (100 dahil) bir sayı üretir
+        console.log("50 ile 100 arası rastgele sayı: " + yeniFloorSayi4);
+    }
+    var ogrenciler = document.getElementById("slcOgrenciler"); // select'i bir objeye atayalım
+    console.log(ogrenciler.options[0].value + " " + ogrenciler.options[0].text); // Select 0. index ulaşma
+    console.log(ogrenciler.options[1].value + " " + ogrenciler.options[1].text); // 1. index
+    console.log(ogrenciler.options[2].value + " " + ogrenciler.options[2].text); // 2.index
+    console.log(ogrenciler.options[3].value + " " + ogrenciler.options[3].text); // 3.index
+
+
+    rastgeleOgrNo = Math.floor(Math.random() * ogrenciler.options.length); // Select teki option sayısı kadar rastgele index no üretir.
+    document.getElementById("mesaj").innerHTML = "Şanslı Öğrenci: " + ogrenciler.options[rastgeleOgrNo].value + " " + ogrenciler.options[rastgeleOgrNo].text;
+
+    // Select seçili ögeyi değiştirme
+    ogrenciler.options[rastgeleOgrNo].setAttribute("selected",true);
+
+    // Select 'ten Kayıt Silme
+    silOgrNo = Math.floor(Math.random() * ogrenciler.options.length);
+	console.log("Silinecek Öğrenci No:" + ogrenciler.options[silOgrNo].value + " " + ogrenciler.options[silOgrNo].text);
+	ogrenciler.options[silOgrNo].remove();
+
+    // Select içine option ekleme
+    var newOption = document.createElement("option");
+    newOption.text = "Şükran Yıldırım";
+    newOption.value = "402";
+    ogrenciler.add(newOption);
+
+        // for(var i=0; i<urunler.options.length;i++){
+        //     var fiyat = Number(urunler.options[i].value); // 50
+        //     var indirimTutari = fiyat * indirimOrani / 100; // 50 * 10 / 100 = 5
+        //     var indirimliFiyat = fiyat - indirimTutari; // 50 - 5 = 45
+        //     urunler.options[i].value = indirimliFiyat;
+        // }
+
+    function gonder(){
+
+    }
+    
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

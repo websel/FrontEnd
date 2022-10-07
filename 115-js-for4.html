@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop Samples</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">For Loop - Samples</h1>
+        
+        <!-- <div class="row">
+            <p>1'den 50 ye kadar olan sayılardan 3'e veya 5'e tam bölünebilenleri ekrana alt alta yazdıralım</p>
+            <div class="col-md-6">
+                <div id="mesaj"></div>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <p>Kullanıcının girdiği 2 sayı arasındaki 3 ile tam bölünebilen sayıları ekrana yazdıran örnek.</p>
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="sayi1" class="form-label">1. Sayıyı Giriniz</label>
+                        <input type="number" class="form-control" id="sayi1" aria-describedby="sayi1" min="1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sayi2" class="form-label">2. Sayıyı Giriniz</label>
+                        <input type="number" class="form-control" id="sayi2" aria-describedby="sayi2" min="1">
+                    </div>
+                    <button type="button" onclick="uceBolunenBul()" class="btn btn-primary">3'e böl. Bul</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="mesaj3"></div>
+            </div>
+        </div>
+    </div>
+<script>
+    // for(var i=1; i<=50; i++)
+    // {
+    //     if(i%3 == 0 || i%5==0){
+    //         document.getElementById("mesaj").innerHTML += i + "<br>";
+    //     }
+    // }
+    function uceBolunenBul(){
+        let sayi1 = Number(document.getElementById("sayi1").value);
+        let sayi2 = Number(document.getElementById("sayi2").value);
+        document.getElementById("mesaj3").innerHTML="";
+        let sayac=0;
+        if(sayi2>sayi1){
+            for(let x=sayi1;x<=sayi2;x++){
+                if(x%3==0){
+                    sayac++;
+                    document.getElementById("mesaj3").innerHTML += x + "<br>";
+                }
+            }
+            document.getElementById("mesaj3").innerHTML = "<h4>" + sayi1 + " ile " + sayi2 + " arasında 3'e tam bölünebilen " + sayac + " adet sayı bulundu:</h4>" + document.getElementById("mesaj3").innerHTML;
+            if(sayac==0){
+                document.getElementById("mesaj3").innerHTML = "<h4 class='text-danger'>" + sayi1 + " ile " + sayi2 + " arasında 3'e tam bölünebilen hiç sayı bulunamadı</h4>"
+            }
+        }
+        else{
+            document.getElementById("mesaj3").innerHTML = "<span class='alert alert-danger'>Lütfen 2. Sayıyı 1. Sayıdan Büyük Giriniz</span>";
+        }
+    }
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

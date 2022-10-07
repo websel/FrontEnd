@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Tip Dönüşümü</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  
+</head>
+<body>
+    <h1>JS Tip Dönüşümü</h1>
+<script>
+
+    // Birbirleriyle aynı veri tipinde olan değişkenleri toplayabiliriz.
+    let para = "100";
+    console.log(para + 15); // 10015
+    console.log(Number(para) + 15); // 115
+
+    // String(degisken) metodu değişkenin değerini stringe çevirir.
+    let ucret = 5400;
+    console.log(ucret + 15); // 5415
+    console.log(String(ucret) + 15); // 540015
+
+    // Boolean(degisken) metosu değişkenin değerini boolean'a dönüştürür.
+    // true ya da false olarak döner.
+    // Değişkende bir değer varsa true,
+    // Null, 0, Nan, Undefined ve "" gibi değerler varsa false döndürür.
+    let meyve="elma";
+    let kotenjan = 23;
+    let okulAdi;
+    console.log(Boolean(meyve));
+    console.log(Boolean(kotenjan));
+    console.log("okulAdi değişkeni: " + Boolean(okulAdi));
+
+    // string templates
+    console.log(`En sevilen meyve ${meyve}`) // Backtick karakteri `  alt + 96
+    console.log("En sevilen meyve " + meyve);
+    
+
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS üs ve kök</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        .mor{color:violet;}
+        .mor-bg{background-color: violet;}
+        .name{font-size:2rem;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">Dik Kenarları girilen üçgenin hipotenüsünü hesaplama</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                    <label for="kenar1" class="form-label">Kenar 1</label>
+                    <input type="number" class="form-control" id="kenar1" min="1">
+                    </div>
+                    <div class="mb-3">
+                    <label for="kenar2" class="form-label">Kenar 2</label>
+                    <input type="number" class="form-control" id="kenar2" min="1">
+                    </div>
+                    <button type="button" onclick="gonder()" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="mesaj"></div>
+            </div>
+        </div>
+        
+    </div>
+<script>
+    function gonder(){
+        //debugger;
+        let kenar1 = Number(document.getElementById("kenar1").value);
+        let kenar2 = Number(document.getElementById("kenar2").value);
+        // a**2 + b**2 = c**2
+
+        //ternany
+        console.log(kenar1>50 ? "Büyük" : "Normal");
+        var uzunluk = kenar1>50 ? "Büyük" : "Normal";
+
+        var otvOran = kenar1<=1.3 ? "37" : (kenar1>1.3 && kenar1<=1.6) ? "75" : "90";
+        console.log(otvOran);
+
+        if(kenar1 > 0)
+        {
+            if(kenar2 > 0)
+            {
+                let sonuc = kenar1**2 + kenar2**2;
+                sonuc = sonuc**(1/2);
+                document.getElementById("mesaj").innerText="Hipotenüs Uzunluğu: " + sonuc.toFixed(2);
+            }
+            else // kenar 2 hatası
+            {
+                document.getElementById("mesaj").innerText="Kenar 2 değeri 0 veya daha küçük olamaz.";
+            }
+        }
+        else // kenar 1 hatası
+        {
+            document.getElementById("mesaj").innerText="Kenar 1 değeri 0 veya daha küçük olamaz.";
+        }
+    }
+
+    /*
+    if(şart){
+        // şart doğruysa kodlar
+    }
+    else{
+        // şart yanlışsa kodlar
+    }
+    */
+    /*function fonksiyon_adi(parametre1, parametre2, ...){
+        kodlar...
+    }*/
+    
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

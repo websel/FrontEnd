@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Sınıf Listesi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        .numara{background: linear-gradient(#c63463,#900633);color:#fff;font-weight: bold;font-size: 20px;padding: 15px 30px;}
+        .isim{background: linear-gradient(#eab92d,#c79810);color:#fff;font-weight: bold;font-size: 20px;padding: 15px 60px 15px 30px;}
+        .ogrsatir:hover .isim{background: linear-gradient(#ed8250,#e45e2e);}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">Öğrenciler - Sınıf Listesi</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label for="slcOgrenciler">Öğrenci Seç</label>
+                    <select id="slcOgrenciler" class="form-select">
+                        <option value="158">Yusuf Çetinkaya</option> <!-- 0.index -->
+                        <option value="171">Elif Nur Kazancı</option> <!-- 1.index -->
+                        <option value="174">Erkan Can Kargın</option> <!-- 2.index -->
+                        <option value="184">Kağan Akyürek</option> <!-- 4. Element - 3.index -->
+                        <option value="190">Muhammed Arda Arcan</option>
+                        <option value="191">Elif Buse Özkan</option> <!-- 6. Element - 5.index -->
+                        <option value="195">Rabia Danış</option>
+                        <option value="214">Feride Ceren Ünsal</option>
+                        <option value="218">Cemal Yiğit Açıkalın</option>
+                        <option value="220">Pelin Öztürk</option>
+                        <option value="194">Yağmur Kara</option>
+                        <option value="227">Enes Cesuryürek</option>
+                        <option value="260">Fatih Mehmet Çelik</option>
+                        <option value="312">Furkan Enes Avcı</option>
+                        <option value="314">Rabia Gülsün</option>
+                        <option value="317">Samet Yılmaz</option>
+                        <option value="321">Mehmet Galip Sarıgül</option>
+                        <option value="330">Serap Kızılkaya</option>
+                        <option value="342">Elif Güney</option>
+                        <option value="343">Orhan Tekin</option>
+                        <option value="344">Süleyman Olgun</option>
+                    </select>
+                    </div>
+                    <button type="button" id="btnGonder" onclick="gonder()" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="mesaj"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+    function gonder(){
+        var ogrenciler = document.getElementById("slcOgrenciler");
+        var liste = "";
+        for(var i=0; i< ogrenciler.options.length;i++){
+            liste += `  <div class='d-flex my-3 ogrsatir'>
+                            <div class='numara'>${ogrenciler.options[i].value}</div>
+                            <div class='isim w-75'>${ogrenciler.options[i].text}</div>
+                        </div>`
+        }
+        document.getElementById("mesaj").innerHTML = liste;
+    }
+    
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

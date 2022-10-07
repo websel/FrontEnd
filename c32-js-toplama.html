@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Toplama Örneği</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">JS Toplama Örneği</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="sayi1" class="form-label">1. Sayı</label>
+                    <input type="number" class="form-control" id="sayi1" aria-describedby="sayi1">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="sayi2" class="form-label">2. Sayı</label>
+                    <input type="number" class="form-control" id="sayi2" aria-describedby="sayi2">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="btnTopla" class="form-label d-block">&nbsp;</label>
+                    <button type="button" id="btnTopla" class="btn btn-primary" onclick="topla()">TOPLA</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                Sonuç: <span id="sonuc"></span>
+            </div>
+        </div>
+    </div>
+<script>
+    function topla(){
+        let sayi1 = document.getElementById("sayi1").value;
+        let sayi2 = document.getElementById("sayi2").value;
+        let sonuc = Number(sayi1) + Number(sayi2);
+        //document.getElementById("sonuc").innerText = sonuc;
+        document.getElementById("sonuc").innerHTML = "<span class=fs-5>" + sonuc + "</span>";
+    }
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

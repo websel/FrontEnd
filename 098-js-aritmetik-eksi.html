@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Aritmetik Operatörler Eksi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  
+</head>
+<body>
+    <h1>JS Aritmetik Operatörler Eksi</h1>
+    
+<script>
+    let yil=2022;
+    let dTarihi = 1980;
+    let yas = yil - dTarihi;
+    console.log("Yaş: " + yas);
+    console.log("YAŞ: " + (yil - dTarihi));
+
+    // yil-dTarihi işlemine Parantez konulmazsa NaN döner
+    //console.log("YAŞ: " + yil - dTarihi);
+    //"YAŞ: 2022" - 1980 --> NaN
+
+    const pi=3;
+    const r=3;
+    const alan = pi*r**2;
+    const cevre = 2*pi*r;
+    console.log(alan, cevre);
+    console.log("Alan: " + alan + " - Çevre: " + cevre);
+    console.log(`Alan: ${alan} - Çevre: ${cevre}`);
+
+    //diğer aritmetik operatörler
+    let a = 3;
+    let b = a++; // b'ye 3 değeri atar ve sonraki adımda a=4 olur.
+    //alert(b);
+    let c = b--;
+    console.log(a,b,c); // 4 2 3
+
+    let kontenjan = 25;
+    kontenjan += 4;  // kontenjan = kontenjan + 4;
+    console.log("kontenjan: " + kontenjan);
+    kontenjan++;
+    console.log("kontenjan: " + kontenjan); // kontenjan : 30 
+    console.log("kontenjan: " + kontenjan++); // kontenjan: 30 yazar ancak sonraki adımda değeri 1 artar
+    //alert(kontenjan);
+
+    console.log("-------");
+    // Mod Alma Operatörü (%)
+    let sayi = 123;
+    let birlerBasamagi = sayi % 10;
+    console.log(birlerBasamagi);
+
+    let sayi2 = 3;
+    let sonuc = sayi2 * 13 % 9; //  
+    console.log(sonuc);
+
+    let toplamFiyat = 1200;
+    let taksitSayisi = 12;
+    let taksitMiktari = toplamFiyat / taksitSayisi;
+    console.log("--------");
+    console.log("Taksit Miktarı: " + taksitMiktari + " TL");
+    console.log(typeof(taksitMiktari));
+
+    // 5 sayısının karesi 25 ve küpü 125
+    // 3 sayısının karesi 9 ve küpü 27
+    // console.log("5 sayısının karesi 25 ve küpü 125");
+
+    var x=10;
+    x-=2; // x = x - 2;
+    // x = 8
+    x **= 2;
+    console.log(x);
+
+    console.log(x>5 || toplamFiyat<1500);
+
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

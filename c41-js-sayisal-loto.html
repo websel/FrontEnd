@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Sayısal Loto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        .top{background:linear-gradient(rgb(238, 130, 238),rgb(193, 108, 193));font-size: 3.5em;padding: 20px;color:#fff;border-radius: 50%;border:solid 2px rgb(146, 48, 146);margin-right:25px;width: 115px; height:115px;text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">JS Sayısal Loto</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="mesaj"></div>
+            </div>
+        </div>
+        
+    </div>
+<script>
+    // 6 kere yap
+        // sayı üret -random
+        // sayı üretildikten sonra kendisinden önce üretilmiş sayı var mı ve bunlardan herhangi birine eşit mi diye kontrol et
+        // eğer eşitse tekrar üret.
+    // 41  - 20 - 29 - 38
+    var uretilenSayi = 0;
+    var sayilar = [];
+    var aynisiVar = false; // eski kayıtları tek tek kontrol et aynısı mevcut ise aynisiVar değişkeninin değeri true olacak. Ve böylece yeniden sayı üretilecek.
+    for(var i=0;i<6;i++){
+        do{
+            aynisiVar = false;
+            uretilenSayi = Math.floor(Math.random() * 49) + 1;
+            console.log(uretilenSayi);
+            // eski sayıları kontrol et
+            for(var k=0;k<sayilar.length;k++){
+                if(sayilar[k] == uretilenSayi){
+                    aynisiVar = true;
+                }
+            }
+        }while(aynisiVar)
+        sayilar.push(uretilenSayi);
+    }
+
+    var ekranYazi = "<div class='d-flex space-evenly'>";
+    
+    for(var i=0; i<sayilar.length;i++){
+        ekranYazi += "<div class='top'>" + sayilar[i] + "</div>";
+    }
+    document.getElementById("mesaj").innerHTML += ekranYazi + "</div>";
+    
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

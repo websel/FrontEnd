@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Functions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">JS Functions</h1>
+        <div class="row">
+            
+            <div class="col-md-6">
+                <div id="mesaj" class="alert alert-primary fs-5"></div>
+                <div id="fark" class="alert alert-info fs-5"></div>
+            </div>
+        </div>
+        
+    </div>
+<script>
+    var satisFiyat = otvHesapla(245000,1.8);
+    console.log(satisFiyat);
+    
+    function otvHesapla(fiyat,motorHacmi){
+        let otvoran = 0;
+        if(motorHacmi <= 1.3){
+            otvoran = 37;}
+        else if(motorHacmi > 1.3 && motorHacmi <= 1.6){
+            otvoran = 75;}
+        else{
+            otvoran = 90;}
+        let otv = fiyat * otvoran / 100;
+        let araToplam = fiyat + otv;
+        let kdv = araToplam * 0.18;
+        let genelToplam = araToplam + kdv;
+
+        return genelToplam;
+    }
+
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>
