@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Deneme Sayac</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+		.fadeEffect {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+.sayac{background-color: honeydew;padding: 50px 20px; text-align: center;}
+.sayac-number{font-size: 3rem;}
+.sayac-text{font-size: 1.5rem;color:navy;}
+    </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row sayac">
+        <div class="col-md-3 sayac-item">
+            <div class="sayac-number">78</div>
+            <div class="sayac-text">Customer</div>
+        </div>
+        <div class="col-md-3 sayac-item">
+            <div class="sayac-number">388</div>
+            <div class="sayac-text">Web Sites</div>
+        </div>
+        <div class="col-md-3 sayac-item">
+            <div class="sayac-number">10000</div>
+            <div class="sayac-text">Monthly Traffic</div>
+        </div>
+        <div class="col-md-3 sayac-item">
+            <div class="sayac-number">2000</div>
+            <div class="sayac-text">Projects</div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        //setInterval(degerYaz, 1000);
+		//document.addEventListener("load",zamanla());
+		var myInterval;
+        var sayilar = document.querySelectorAll(".sayac .sayac-item .sayac-number");
+        
+        const f1 = (bsl,artis) => {  
+            return new Promise( (resolve, reject)=> {    
+                setInterval(()=>{
+                        bsl += artis;
+                        resolve(bsl);
+                    },100)
+            })
+        }  
+        // her biri için başlangıç değeri %30 olsun.
+        // artışlar da %5 miktarınca olsun
+        const degerYaz = async (i, ulasSayi) => {  
+			let bslDeger = Math.floor(ulasSayi *30/100);
+			let artisMiktari = Math.floor(ulasSayi*5/100);
+			do{
+				const msg1 = await f1(bslDeger,artisMiktari);
+				if(msg1>ulasSayi){
+					sayilar[i].innerText = ulasSayi;
+				}
+				else{
+					sayilar[i].innerText = msg1;
+				}
+				bslDeger = msg1;
+			}while(bslDeger<ulasSayi)
+        }
+
+        for (const i in sayilar) {
+            degerYaz(i,Number(sayilar[i].innerText));
+        }
+        
+		// degerYaz(1,Number(sayilar[1].innerText));
+		// degerYaz(2,Number(sayilar[2].innerText));
+		// degerYaz(3,Number(sayilar[3].innerText));
+    </script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Objects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">Objects</h1>
+        <div class="row">
+            <div class="col-md-6">
+               
+            </div>
+            <div class="col-md-6">
+                <div id="mesaj" class="fs-2"></div>
+            </div>
+        </div>
+    </div>
+<script>
+   const araba = {
+    marka: "Mercedes",
+    model: "C200",
+    renk: "Bej",
+    vites: "Otomatik"
+   }
+   araba.yakit = "Dizel";
+   console.log(typeof(araba));
+   console.log(araba);
+   console.log(araba.marka);
+
+   var ogrenci = {
+    adi:"Yasemin",
+    soyadi: "Demir",
+    sinif: "3-C",
+    no: "543",
+    tamisim: function(){
+        return this.adi + " " + this.soyadi;
+    },
+    adres:{
+        il:"İstanbul",
+        ilce:"Beşiktaş",
+        mahalle:"Muratbey",
+        sokak: "Cami Yanı Sk."
+    },
+    dersler: ["Matematik","FenBilgisi","Sosyal Bilgiler","Beden Eğitimi"],
+    diller:[{
+            dilKodu: "TR",
+            dilAdi: "Türkçe",
+            seviye: "Anadil"
+        },
+        {
+            dilKodu: "EN",
+            dilAdi: "İngilizce",
+            seviye: "Advanced"
+        },
+        {
+            dilKodu: "DE",
+            dilAdi: "Almanca",
+            seviye: "Starter"
+        }
+    ]
+   }
+   console.log(ogrenci.tamisim());
+
+   // Constructor yöntemi
+   function Car(marka,model,renk_bilgisi,vites){
+    this.marka = marka;
+    this.model = model;
+    this.renk = renk_bilgisi;
+    this.vites = vites;
+   }
+   var car1 = new Car("Audi","A5","Siyah","Otomatik");
+   var car2 = new Car("Volvo","XC90","Gümüş Gri","Otomatik");
+
+    
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

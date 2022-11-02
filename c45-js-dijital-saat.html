@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Saat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div id="saat" class="fs-3"></div>
+      <div id="mesaj"></div>
+      <h1>Zaman Metotları</h1>
+    </div>
+<script>
+  var d = new Date();
+  document.getElementById("mesaj").innerHTML = "<ul><li>Yıl: " + d.getFullYear() + "</li>";
+  document.getElementById("mesaj").innerHTML += "<li>Ay: " + d.getMonth() + "</li>";
+  document.getElementById("mesaj").innerHTML += "<li>Gün: " + d.getDay() + "</li>";
+  document.getElementById("mesaj").innerHTML += "<li>Saat: " + d.getHours() + "</li>";
+  document.getElementById("mesaj").innerHTML += "<li>Dakika: " + d.getMinutes() + "</li>";
+  document.getElementById("mesaj").innerHTML += "<li>Saniye: " + d.getSeconds() + "</li>";
+  document.getElementById("mesaj").innerHTML += "<li>Time: " + d.getTime() + "</li>";
+  document.getElementById("mesaj").innerHTML += "<li>now: " + Date.now() + "</li></ul>";
+
+  
+    setInterval(()=>{
+      var d2 = new Date();
+      var saat =  d2.getHours();
+      var dakika = d2.getMinutes();
+      var saniye = d2.getSeconds();
+      document.getElementById("saat").innerText = saat + " : " + dakika + " : " + saniye;
+    },1000);
+    // setInterval(()=>{
+    //   document.getElementById("mesaj").innerText = Math.floor(Math.random()*100);
+    //   },2000);
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

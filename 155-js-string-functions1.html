@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Fuctions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h1>String Fuctions</h1>
+      <div id="mesaj" class="fs-4"></div>
+    </div>
+<script>
+    var isim = "Necdet";
+    var isimsoyisim = "Necdet Demir";
+    var deneme = "ŞĞÜÖÇIİ";
+    document.getElementById("mesaj").innerText = "Length: " + isim.length + " - " + isimsoyisim.length;
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>Slice(3,8): </strong> " + isimsoyisim.slice(3,8);
+    document.getElementById("mesaj").innerHTML += "<br><strong>Slice(10,18): </strong> " + isimsoyisim.slice(10,18);
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>Substring(3): </strong> " + isimsoyisim.substring(3);
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>SubStr(0,3):</strong> " + isimsoyisim.substr(0,3);
+    document.getElementById("mesaj").innerHTML += "<br><strong>SubStr(10,8):</strong> " + isimsoyisim.substr(10,8);
+    
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>concat():</strong> " + isimsoyisim.concat(" " + isim);
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>trim():</strong> " + isimsoyisim.substr(0,3);
+
+    let okulAdi = "   Galatasaray Lisesi      ";
+    console.log(okulAdi);
+    console.log(okulAdi.trim());
+    console.log(okulAdi.trimStart());
+    console.log(okulAdi.trimEnd());
+    document.getElementById("mesaj").innerHTML += "<br><strong>trim():</strong> " + okulAdi.trim();
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>toUpperCase():</strong> " + isimsoyisim.toUpperCase();
+    document.getElementById("mesaj").innerHTML += "<br><strong>toLowerCase():</strong> " + isimsoyisim.toLowerCase();
+
+    var metin ="I am creating a minecraft bot using mineflayer library. After a bit of work I am decided to make code readable and reusable (image of file organisation) and also start using typescript.";
+    document.getElementById("mesaj").innerHTML += "<br><strong>replace():</strong> " + metin.replace("typescript","javascript");
+
+    metin = metin.replace(/Minecraft/i, "deneme"); // cancel case sensitivity 
+    metin = metin.replace(/and/g,"ve"); // replace All
+    console.log(metin);
+
+    let sayi = "1254";
+    document.getElementById("mesaj").innerHTML += "<br><strong>padStart():</strong> " + sayi.padStart(8,"0");
+    document.getElementById("mesaj").innerHTML += "<br><strong>padEnd():</strong> " + sayi.padEnd(8,"0");
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>charAt():</strong> " + isimsoyisim.charAt(8);
+    document.getElementById("mesaj").innerHTML += "<br><strong>charCodeAt():</strong> " + isimsoyisim.charCodeAt(8); // 65 - A -> 97 - a
+    // 0010 0001
+    document.getElementById("mesaj").innerHTML += "<br><strong>Karakter sırası():</strong> " + isimsoyisim[8];
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>Split(' '):</strong> " + metin.split(" ").length;
+    for(let klm of metin.split(" ")){
+        console.log(klm);
+    }
+    var yeniDizi = isim.split("");  // -> N,e,c,d,e,t
+    for(let ad of yeniDizi){
+        document.getElementById("mesaj").innerHTML += "<br>" + ad;
+    }
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>indexOf(''):</strong> " + okulAdi.trim().indexOf("a");
+    document.getElementById("mesaj").innerHTML += "<br><strong>lastIndexOf(''):</strong> " + okulAdi.trim().lastIndexOf("a");
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>Search(''):</strong> " + metin.search("using");
+    document.getElementById("mesaj").innerHTML += "<br><strong>includes(''):</strong> " + metin.includes("using");
+
+    document.getElementById("mesaj").innerHTML += "<br><strong>startsWith(''):</strong> " + metin.startsWith("I am");
+    document.getElementById("mesaj").innerHTML += "<br><strong>endsWith(''):</strong> " + metin.endsWith("using");
+
+    // Necdet -> N,e,c,d,e,t -> substr(bşl,uzunluk)
+    // 0,1
+    // 1,1
+    // 2,1
+    // 3,1
+    // 4,1
+    // 5,1
+
+    for(let i=0; i<isim.length; i++){
+        document.getElementById("mesaj").innerHTML += "<br>" + isim.substr(i,1);
+    }
+
+    document.getElementById("mesaj").innerHTML += "<br>";
+    for(let i=0; i<isim.length; i++){
+        for(let j=0;j<=i;j++){
+            document.getElementById("mesaj").innerHTML += isim.substr(i,1);
+        }
+        document.getElementById("mesaj").innerHTML += "<br>";
+    }
+    document.getElementById("mesaj").innerHTML="";
+var sonuc="";
+for(let i=0;i<isim.length;i++){
+    document.getElementById("mesaj").innerHTML+=sonuc.substr(i*(i+1)/2,i+1) +"<br>";
+
+  } 
+  //document.getElementById("mesaj").innerHTML+=sonuc.substr(i*(i+1)/2,i+1) +"<br>";
+
+
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

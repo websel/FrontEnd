@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Fuctions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        .kutu{width: 50px; height: 50px; text-align: center; background:linear-gradient(rgb(121, 2, 2),rgb(213, 1, 1));color:white;font-size: 2em;margin-right: 5px;font-weight: bold;}
+        .boskutu{width: 30px; height: 50px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h1>String Fuctions</h1>
+      <div id="kutular" class="d-flex">
+
+      </div>
+      <div id="mesaj" class="fs-4"></div>
+    </div>
+<script>
+    var isim = "Necdet";
+    var isimsoyisim = "Mehmet Akif Ersoy";
+    var sonuc="";
+    for(let i=0; i<isimsoyisim.length; i++){
+        if(isimsoyisim.substr(i,1)==" "){
+            sonuc += `<div class="boskutu"></div>`;
+        }
+        else{
+            sonuc += `<div class="kutu">${isimsoyisim.substr(i,1)}</div>`;
+        }
+    }
+    document.getElementById("kutular").innerHTML = sonuc;
+
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

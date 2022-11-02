@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Not Listesi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">DOM - Not Listesi</h1>
+      <p>Puanı belli bir değerden aşağıda olan kişilerin rengini kırmızı yapan programı yapınız.</p>
+        <table id="tabloNotlar">
+          <tr>
+            <th>Öğrenci Adı</th>
+            <th>1. Not</th>
+          </tr>
+          <tr class="ogrSatir" id="satir-1">
+            <td class="ogrAdi" id="adi-1">Yalçın</td>
+            <td class="ogrNot" id="not-1">81</td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Zafer</td>
+            <td class="ogrNot">62</td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Sena</td>
+            <td class="ogrNot">41</td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Kader</td>
+            <td class="ogrNot">89</td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Kudret</td>
+            <td class="ogrNot">36</td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Zeliha</td>
+            <td class="ogrNot">42</td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Demet</td>
+            <td class="ogrNot">74</td>
+          </tr>
+        </table>
+        <div id="mesaj"></div>
+    </div>
+<script>
+    var adlar = document.querySelectorAll(".ogrAdi");
+    var notlar = document.querySelectorAll(".ogrNot");
+    var satirlar = document.querySelectorAll(".ogrSatir");
+
+    for(let i in notlar){
+      if(Number(notlar[i].innerText) < 50){
+        //notlar[i].classList.add("bg-danger");
+        //adlar[i].classList.add("bg-danger");
+        satirlar[i].classList.add("bg-danger");
+      }
+    }
+    
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

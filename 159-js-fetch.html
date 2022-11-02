@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch - tvmaze</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+      .genres{font-style: italic;font-size: small;color:rgb(136, 134, 134);}
+      .network{font-size: small;color:navy}
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Fetch - tvmaze</h1>
+      <form>
+        <div class="mb-3">
+          <label for="txtSearch" class="form-label">Search TV Shows</label>
+          <input type="text" id="txtSearch" class="form-control" name="txtSearch" />
+        </div>
+
+        <input type="hidden" id="hdnDil" name="hdnDil" />
+        <input type="button" id="btnSearch" class="btn btn-success" value="GÖNDER" />
+      </form>
+      
+      <div id="mesaj"></div>
+      <div id="detaylar"></div>
+    </div>
+<script>
+  document.querySelector("#btnSearch").addEventListener("click",()=>{
+    var searchText = document.getElementById("txtSearch").value;
+    var sonuc="";
+    // get method - veri çekmek
+    fetch("https://api.tvmaze.com/search/shows?q=" + searchText)
+    .then(resp=>resp.json())
+    .then(data=>{ // data geldi
+      console.log(data);
+      //console.log(data.length);
+      var syc=1;
+      data.forEach(dt => { // data içinde gez
+        if(syc % 4 == 1){
+          sonuc += "<div class='row mt-4'>";
+        }
+        sonuc+=`<div class="col-md-3">
+                <div class="card">
+                  <img src="${dt.show.image.medium}" class="card-img-top" alt="${dt.show.name}">
+                  <div class="card-body">
+                    <h5 class="card-title">${dt.show.name}</h5>
+                    <p class="card-text">${dt.show.summary}</p>
+                    <div class="d-flex justify-content-between">`;
+                      if(dt.show.genres != null){
+                        sonuc += `<div class="genres">${dt.show.genres}</div>`
+                      }
+                      else{
+                        sonuc +="<div class='genres'>&nbsp;</div>";
+                      }
+                      if(dt.show.network != null){
+                        sonuc += `<div class="network">${dt.show.network.name}</div>`
+                      }
+                      else{
+                        sonuc +="<div class='network'>&nbsp;</div>";
+                      }
+                      
+                      sonuc+=`</div>
+                    <a href="#" onclick="getDetails(${dt.show.externals.thetvdb})" class="btn btn-primary mt-3">Details</a>
+                  </div>
+                </div>
+                </div>`;
+        if(syc % 4==0 || syc==data.length){
+          sonuc += "</div>";
+        }
+        syc++;
+      });
+      document.getElementById("mesaj").innerHTML = sonuc;
+    })
+    .catch(err=>(err)=>{
+      console.log(err);
+      document.getElementById("mesaj").innerHTML = `<div class="alert alert-danger">HATA!<br>${err}</div>`;
+    });
+  })
+
+  function getDetails(thetvdb){
+    fetch("https://api.tvmaze.com/lookup/shows?thetvdb="+ thetvdb)
+    .then(resp=>resp.json())
+    .then(data=>{
+      console.log(data);
+      document.getElementById("mesaj").classList.add("d-none");
+      let detay = `<div class="row">
+                      <div class="col-md-6">
+                        <img src="${data.image.medium}" class="img-fluid" alt="${data.name}" />
+                      </div>
+                      <div class="col-md-6">
+                        <table class="table">
+                          <tr>
+                            <td>Name of the TV Show:</td>
+                            <td>${data.name}</td>
+                          </tr>
+                          <tr>
+                            <td>Language:</td>
+                            <td>${data.language}</td>
+                          </tr>
+                          <tr>
+                            <td>Genres:</td>
+                            <td>${data.genres}</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="btn btn-sm btn-primary" onclick="geri()">Back</div>`;
+        document.getElementById("detaylar").innerHTML = detay;
+    })
+    .catch(err=>{
+      console.log(err);
+      document.getElementById("detaylar").innerHTML = `<div class="alert alert-danger">HATA!<br>${err}</div>`;
+    })
+  }
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - hafıza</title>
+    <style>
+      .kelime{font-size: 2rem;}
+      .gizle{visibility: hidden;}
+      .kelime-item{position:relative;padding:15px;border:solid 1px;cursor:pointer;border-radius:15px;text-align: center;height:100px;width:201px;box-shadow: 4px 6px 5px;transition:.3s;top:0;left:0;}
+      .kelime-item:hover{box-shadow: 2px 3px 2px;top:3px;left:3px;}
+      .kart-bg{background-image:url('images/kart-bg2.jpg'); background-repeat:no-repeat; background-position: center center; background-size: cover;}
+      /* .kart-bg2{background: } */
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 id="anabaslik">Hafıza oyunu</h1>
+        </div>
+        <div class="col-md-4 text-end">
+          <button type="button" data-bs-toggle="modal" data-bs-target="#settingsModal">
+            <img src="images/gear.svg" alt="Settings" class="pb-1">
+          </button>
+          
+        </div>
+      </div>
+
+        <div id="mesaj"></div>
+        <div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Tebrikler</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+              </div>
+              <div class="modal-body">
+                <div class="fs-4">Tebrikler !</div>
+                <div class="fs-5">Oyunu Bitirdin</div>
+                <div id="hamleSayisi" class="fs-5"></div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-primary" id="yeniOyun">Yeni Oyun</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="settingsModalLabel">Settings</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="saveSettings">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+        <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<script>
+  var kelimeler = [];
+  var kelimeler2 = [];
+  var acikSayac=0;
+  var bulunan = 0;
+  var toplam = 8;
+  var adimSayac = 0;
+  var acikKelime1 ="";
+  var acikKelime2 ="";
+  var bgImage = "";
+  if(localStorage.bg != null && localStorage.bg != "" && localStorage.bg!= undefined){
+    bgImage = localStorage.bg;
+  }
+  else{
+    bgImage = "kart-bg2.jpg";
+  }
+  var stiller = document.styleSheets[0].cssRules;
+  for(let stil of stiller){
+    if(stil.selectorText==".kart-bg"){
+      stil.style.setProperty("background-image", "url('images/" + bgImage + "')");
+      break;
+    }
+  }
+  
+  const myModal = new bootstrap.Modal(document.getElementById('myModal'),{keyboard: false});
+  yeniOyun();
+
+  function yeniOyun(){
+      myModal.hide();
+      kelimeler = ["karpuz","mandalina","muz","erik","şeftali","ananas","mango","kivi"];
+      kelimeler2 = kelimeler.concat(kelimeler);
+      bulunan = 0;
+      adimSayac = 0;
+      acikKelime1 ="";
+      acikKelime2 ="";
+      let mesaj = `<div class="row g-4">`;
+      let syc=0;
+      //debugger;
+    do{
+      let rndSayi = Math.floor(Math.random()*kelimeler2.length);
+      if(rndSayi>=0){
+        console.log(rndSayi + " - " + kelimeler2[rndSayi]);
+        
+        mesaj += `<div class="col-md-3">
+          <div class="kelime-item kart-bg m-4">
+          <div class="kelime gizle ">${kelimeler2[rndSayi]}</div>
+          </div>
+          </div>
+        `;
+        syc++;
+        if(syc%4==0){
+          mesaj+="</div><div class='row'>";
+        }
+        kelimeler2.splice(rndSayi,1);
+      }
+    }while(kelimeler2.length>0)
+    mesaj += "</div>";
+    document.getElementById("mesaj").innerHTML = mesaj;
+
+    eventLisEkle();
+  }
+
+  function eventLisEkle(){
+    document.querySelectorAll(".kelime-item").forEach(klm=>{
+    klm.addEventListener("click",(e)=>{
+      if(acikSayac <2) // 2 farklı kutuya basıldıktan sonra tekrar basılmasını engellemek için
+      {
+        if(e.target.querySelector(".kelime") != null) // Aynı kutucuğa bir daha basmayı engellemek için
+        {
+          e.target.querySelector(".kelime").classList.remove("gizle");
+          e.target.querySelector(".kelime").parentElement.classList.remove("kart-bg");
+          acikSayac++;
+          if(acikSayac==1){
+            acikKelime1 = e.target.querySelector(".kelime").innerText;
+          }
+          if(acikSayac==2){
+            acikKelime2 = e.target.querySelector(".kelime").innerText;
+            adimSayac++;
+            if(acikKelime1 == acikKelime2){ // bildik
+              yesilYap();
+              bulunan++;
+              if(bulunan == toplam){
+                const myTimeout2 = setTimeout(openModal,300);
+              }
+            }
+            const myTimeout = setTimeout(aciklariKapat, 1500);
+          }
+        }
+      }
+    });
+  })
+  }
+
+  function aciklariKapat(){
+    let tumKelimeler = document.querySelectorAll(".kelime");
+    
+    if(acikKelime1 == acikKelime2){ // bildik
+      for(let klm of tumKelimeler){
+        if(!klm.classList.contains("gizle")){
+          klm.parentElement.classList.add("gizle");
+          //klm.parentElement.parentElement.classList.add("kart-bg");
+        }
+      }
+      acikSayac = 0;
+    }
+    else{
+      for(let klm of tumKelimeler){
+        if(!klm.classList.contains("gizle")){
+          klm.classList.add("gizle");
+          klm.parentElement.classList.add("kart-bg");
+        }
+      }
+      acikSayac = 0;
+    }
+  }
+
+  function yesilYap(){
+    let tumKelimeler = document.querySelectorAll(".kelime");
+    for(let klm of tumKelimeler){
+        if(!klm.classList.contains("gizle")){
+          klm.parentElement.classList.add("bg-success");
+          klm.parentElement.style.color="white";
+        }
+      }
+  }
+
+  function openModal(){
+    console.log("openModal a geldi");
+    myModal.show();
+    document.getElementById("hamleSayisi").innerText = "Hamle Sayısı: " + adimSayac;
+  }
+
+  function saveSettings(){
+    localStorage.bg = "kart-bg1.jpg";
+  }
+
+  document.getElementById("yeniOyun").addEventListener("click",yeniOyun);
+  document.getElementById("saveSettings").addEventListener("click",saveSettings);
+</script>
+
+</body>
+</html>

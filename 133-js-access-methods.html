@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Access Methods</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">Access Methods</h1>
+        
+        <div id="mesaj"></div>
+    </div>
+<script>
+    let arakelime="Fare";
+    const hayvanlar = ['fil','kuş','deve','fare','kedi'];
+    if(hayvanlar.includes(arakelime)){
+        console.log(arakelime + " var");
+    }
+    else{
+        console.log(arakelime + " yok");
+    }
+
+    // belirtilen başlangıç ve bitiş no ya göre dizi oluşturuyor
+    console.log(hayvanlar.slice(1)); // 'kuş','deve','fare','kedi'
+    console.log(hayvanlar.slice(1,3));  //'kuş','deve'  -- 1. ve 2. indexleri alıyor 3. index dahil değil
+
+    const hayvanlar2 = ['fil','kuş','deve','fare','kuş', 'zebra','aslan', 'kuş','balina'];
+    console.log(hayvanlar2.indexOf('kuş'));
+    console.log(hayvanlar2.lastIndexOf('kuş'));
+    console.log(hayvanlar2.indexOf('aslan')); // olmayan kayıtlar için -1 döner
+    // o zaman olmayan kayıtları kontrol için 0'dan küçükse ifadesini kullanabiliriz.
+    let aslanSira = hayvanlar2.indexOf('aslan');
+    if(aslanSira <0){
+        document.getElementById("mesaj").innerText = "Aslan Yok";
+    }
+    else{
+        document.getElementById("mesaj").innerText = "Aslan " + (aslanSira+1) + ". sırada";
+    }
+
+    // baştan başlayıp aslan'ın olduğu sıraya kadar olanları yazdırma.
+    for(let i=0;i<=hayvanlar2.indexOf('aslan');i++){
+        document.getElementById("mesaj").innerHTML += "<br>" + hayvanlar2[i];
+    }
+
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

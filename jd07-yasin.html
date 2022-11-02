@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <title> Hafiza Oyunu </title>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+         .kutu{border:solid 3px;border-radius:  15px;height:  100px ; width:  200px;font-size: 1.8rem; display: flex;
+           align-items: center; justify-content: center; cursor: pointer; box-shadow: 4px 6px 3px rgba(0, 0, 0,0.3);
+            position: relative; top:0;left: 0; ;transition: .3s ease-out;}
+      .kutu:hover{box-shadow: 1px 2px 1px rgba(0,0,0,0.7);top: 3px;left: 4px;}
+            .kartbg{background: url('images/kart-bg1.jpg') no-repeat;}
+            .gizle{visibility: hidden;}
+         </style>
+</head>
+<body>
+  <div class="container">
+  <div id="mesaj"></div>
+  </div>
+     <script>
+     var kelimeler = ["karpuz","mandalina","muz","erik","seftali","ananas","mango","kivi",]
+     var kelimeler2 = kelimeler.concat(kelimeler);
+     var acikSay = 0;
+    var acik1 = "";
+    var acik2 = "";
+  var metin = `<div class="row">`;
+do{
+      let sayi = Math.floor(Math.random() * kelimeler2.length);
+      console.log(sayi +" - " + kelimeler2[sayi]);
+      metin += `<div class="col-md-3 p-3">
+         <div class="kutu kartbg">
+            <div class="meyve d-none">
+                ${kelimeler2[sayi]}
+            </div>
+         </div>
+         </div>`;
+kelimeler2.splice(sayi,1);
+   }while(kelimeler2.length > 0)
+   metin += "</div>" ;
+      document.getElementById("mesaj").innerHTML = metin ;
+//       //  6. Adim hangi kutuya tiklarsak bg resim kaybolsun  ve meyve ismi görünsün
+
+     var kutular = document.querySelectorAll(".kutu") ;
+       kutular.forEach(kt => {
+            kt.addEventListener("click", (e) => {
+               acikSay++;
+               e.target.classList.remove("kartbg");
+               e.target.classList.add("opened");
+               e.target.querySelector(".meyve").classList.remove("d-none");
+               if (acikSay == 1) {
+                  acik1 = kt.innerText;
+               }
+               else {   //2. Kartin secildigi yer
+                  acik2 = kt.innerText;
+                  if (acik1 == acik2) {//bildigi durum  ( iki kart ayniysa bulunan ayni isimler. yesil olsun )
+                    var aciklar = document.querySelectorAll(".opened");
+                    console.log(aciklar);
+                    for(let ac of aciklar){
+                        ac.classList.add("bg-success");
+
+                        setTimeout(()=>{
+                        ac.classList.add("gizle");
+                        ac.classList.remove("opened");
+                    },1500);
+                    };
+                    }
+                    else{  //bilemedigi durum
+                    }
+               }
+            })
+         })
+</script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Iterations Methods - Filter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">Iterations Methods - Filter</h1>
+        <div id="mesaj"></div>
+    </div>
+<script>
+    const koord = [1250, -1000, 2000, -560, 800];
+
+    const negatifKoord = koord.filter(x => x<0);
+
+    document.getElementById("mesaj").innerHTML = negatifKoord.join(" - ");
+
+    // -----------------------
+    //Bireyler dizisindeki kişilerden adı "Belirtilen" harf ile başlayanları  seçerek ayrı bir diziye saklayan uygulama
+    const bireyler = ["Mustafa", "Murat", "Ahmet", "mualla", "Ayşe", "Canan"];
+    function filtrele(harf){
+        harf = harf.toUpperCase();
+        var filtrelenmis = bireyler.filter(x=> x.toUpperCase().startsWith(harf));
+        console.log(filtrelenmis);
+    }
+
+    filtrele("A");
+    filtrele("M");
+    filtrele("m");
+
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

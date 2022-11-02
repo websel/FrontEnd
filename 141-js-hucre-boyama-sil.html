@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Not Listesi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">DOM - Not Listesi</h1>
+      <p>Puanı belli bir değerden aşağıda olan kişilerin rengini kırmızı yapan programı yapınız.</p>
+        <table id="tabloNotlar">
+          <tr>
+            <th>Öğrenci Adı</th>
+            <th>1. Not</th>
+          </tr>
+          <tr class="ogrSatir" id="satir-1">
+            <td class="ogrAdi" id="adi-1">Yalçın</td>
+            <td class="ogrNot" id="not-1">81</td>
+            <td><button type="button" class="btn btn-sm btn-danger" onclick="satirSil(0)">Sil</button></td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Zafer</td>
+            <td class="ogrNot">62</td>
+            <td><button type="button" class="btn btn-sm btn-danger" onclick="satirSil(1)">Sil</button></td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Sena</td>
+            <td class="ogrNot">41</td>
+            <td><button type="button" class="btn btn-sm btn-danger" onclick="satirSil(2)">Sil</button></td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Kader</td>
+            <td class="ogrNot">89</td>
+            <td><button type="button" class="btn btn-sm btn-danger" onclick="satirSil(3)">Sil</button></td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Kudret</td>
+            <td class="ogrNot">36</td>
+            <td><button type="button" class="btn btn-sm btn-danger" onclick="satirSil(4)">Sil</button></td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Zeliha</td>
+            <td class="ogrNot">42</td>
+            <td><button type="button" class="btn btn-sm btn-danger" onclick="satirSil(5)">Sil</button></td>
+          </tr>
+          <tr class="ogrSatir">
+            <td class="ogrAdi">Demet</td>
+            <td class="ogrNot">74</td>
+            <td><button type="button" class="btn btn-sm btn-danger" onclick="satirSil(6)">Sil</button></td>
+          </tr>
+        </table>
+        <div id="mesaj"></div>
+    </div>
+<script>
+
+  const data = [
+    {id:1, okulNo: "435", name:"Pakize", puan:85},
+    {id:2, okulNo: "437", name:"Orhan Can", puan:25},
+    {id:3, okulNo: "438", name:"Emir Rüzgar", puan:68},
+    {id:4, okulNo: "439", name:"Derin", puan:74},
+    {id:5, okulNo: "441", name:"Ada", puan:91},
+    {id:6, okulNo: "443", name:"Latife", puan:45},
+    {id:17, okulNo: "451", name:"Osman", puan:53},
+    {id:32, okulNo: "457", name:"Murat", puan:62},
+    {id:9, okulNo: "466", name:"Gürkan", puan:66},
+    {id:10, okulNo: "467", name:"Derya", puan:39}
+  ]
+    var adlar = document.querySelectorAll(".ogrAdi");
+    var notlar = document.querySelectorAll(".ogrNot");
+    var satirlar = document.querySelectorAll(".ogrSatir");
+
+    for(let i in notlar){
+      if(Number(notlar[i].innerText) < 50){
+        //notlar[i].classList.add("bg-danger");
+        //adlar[i].classList.add("bg-danger");
+        //satirlar[i].classList.add("bg-danger");
+      }
+    }
+
+    function satirSil(sira){
+      //satirlar[sira].classList.add("bg-danger");
+      var cevap = confirm(adlar[sira].innerText + " kişisini silmek istediğinize emin misiniz?");
+      // kullanıcı tamam'a tıklarsa cevap = true olur.
+      // kullanıcı iptal'e tıklarsa cevap = false olur.
+      if(cevap){
+        console.log("Silmeyi Seçtiniz");
+      }
+      else{
+        console.log("İptal Ettiniz");
+      }
+      //Kullanıcıdan veri almaya yarar
+      prompt("Adınızı Giriniz: ");
+    }
+    
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

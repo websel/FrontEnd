@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      ul#anamenu{display:flex;justify-content: space-evenly;list-style: none;}
+      ul#anamenu a{color:maroon;text-decoration: none;}
+      .ustmenu{position: relative; top:-40px;transition: .4s ease-in;}
+      .opened{top:0px !important;}
+	  .galeri-resim{border:solid 15px white; border-radius:15px; outline:solid 1px #005;}
+	  .galeri-item{display:inline-block;width:280px; }
+	  .galeri-container{width: 2500px;}
+	  
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="ustmenu">
+        <ul id="anamenu">
+          <li><a href="#">Anasayfa</a></li>
+          <li><a href="#">Hakkımızda</a></li>
+          <li><a href="#">İletişim</a></li>
+          <li><a href="#">Hizmetler</a></li>
+          <li><a href="#">Ürünler</a></li>
+        </ul>
+        <div id="menu" class="text-center">MENÜ</div>
+      </div>
+      <div id="mesaj"></div>
+	  <div class="row">
+		<div class="col-md-3">
+      <div class="galeri-container">
+	  
+      </div>
+		</div>
+	  </div>
+    </div>
+<script>
+const data = [
+    {id:1, adres: "images/c23img/c23-urun1.jpg", baslik:"Pakize", begeni:85},
+    {id:2, adres: "images/c23img/c23-urun2.jpg", baslik:"Orhan Can", begeni:25},
+    {id:3, adres: "images/c23img/c23-urun3.jpg", baslik:"Emir Rüzgar", begeni:168},
+    {id:4, adres: "images/c23img/c23-urun4.jpg", baslik:"Derin", begeni:74},
+    {id:5, adres: "images/c23img/c23-urun5.jpg", baslik:"Ada", begeni:291},
+    {id:6, adres: "images/c23img/c23-urun6.jpg", baslik:"Latife", begeni:45},
+    {id:17, adres: "images/c23img/c23-urun7.jpg", baslik:"Osman", begeni:53},
+    {id:32, adres: "images/c23img/c23-urun8.jpg", baslik:"Murat", begeni:6}
+  ];
+  var glrText = "";
+  for(let dt of data){
+	glrText += `
+	<div class="galeri-item">
+		<div class="galeri-resim">
+			<img src="${dt.adres}" alt="${dt.baslik}" class="img-fluid" />
+		</div>
+		<div class="galeri-text">
+			<h3>${dt.baslik}</h3>
+			<div class="text-end"><i class="fa-regular fa-heart"></i> ${dt.begeni}</div>
+		</div>
+	</div>
+	`
+  }
+  document.querySelector(".galeri-container").innerHTML = glrText;
+
+    <!-- setInterval(()=>{ -->
+      <!-- document.getElementById("mesaj").innerText = Math.floor(Math.random()*100); -->
+      <!-- },2000); -->
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

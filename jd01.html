@@ -12,9 +12,10 @@
         .gizle{visibility: hidden;}
         body.dark{background-color: #000;color:#fff !important;}
         body.dark button{background-color: #000 !important;border:solid 1px rgb(167, 166, 166)}
+        .bgkirmizi{background-color: #900;}
     </style>
 </head>
-<body>
+<body onload="init()">
   <div class="container">
     <h3>2 sayıyı topla</h3>
     <div class="row">
@@ -155,11 +156,78 @@
                 <br>
                 <div id="sonuc5" class="sonuckutu fs-5 gizle"></div>
             </div>
+
+            <table id="tabloNotlar">
+                <tr>
+                    <td>Ad</td>
+                    <td>Not</td>
+                </tr>
+                <tr>
+                    <td class="ogrAd">Selim</td>
+                    <td class="ogrNot">76</td>
+                </tr>
+                <tr>
+                    <td class="ogrAd">Musa</td>
+                    <td class="ogrNot">46</td>
+                </tr>
+                <tr>
+                    <td class="ogrAd">Nedime</td>
+                    <td class="ogrNot">96</td>
+                </tr>
+                <tr>
+                    <td class="ogrAd">Fahri</td>
+                    <td class="ogrNot">39</td>
+                </tr>
+                <tr>
+                    <td class="ogrAd">İsmail</td>
+                    <td class="ogrNot">54</td>
+                </tr>
+            </table>
         </div>
     </form>
     </div>
 
+    <!-- <body onload="init()"> -->
     <script>
+const f1 = () => {  
+	return new Promise( (resolve, reject)=> {    
+		setTimeout(() => resolve("hello2"), 1000);  
+	})
+}  
+
+const f2 = () => {  
+	return new Promise( (resolve, reject)=> {    
+		setTimeout(() => resolve("hello4"), 2000);  
+	})
+} 
+
+const init = async () => {  	
+    console.log("hello1");  
+
+	const msg1 = await f1();  	
+    console.log(msg1);	
+    
+    console.log("hello3");  
+
+	const msg2 = await f2();
+    console.log(msg2);  
+}
+
+
+        var ogrtr = document.querySelector(".ogrAd").closest("tr");
+        ogrtr.classList.add("text-danger");
+        const isimler = ["Mustafa", "Murat", "Ahmet", "Mustafa", "Ayşe", "canan"];
+        const buyukIsimler = isimler.map(x=> x.toUpperCase());
+        console.log(buyukIsimler);
+
+        const euro = 18.04;
+        const dolar = 18.54;
+        const tlFiyatlar = [1250, 10000, 2000, 560, 800];
+        var euroDizi = tlFiyatlar.map(fiyat => (fiyat/euro).toFixed(2));
+        var dolarDizi = tlFiyatlar.map(fiyat => (fiyat/dolar).toFixed(2));
+        console.log(euroDizi);
+        console.log(dolarDizi);
+
         function topla(){
             document.getElementById("sonuc").classList.remove("gizle");
             let sayi1 = document.querySelector('#sayi1').value;

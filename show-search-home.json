@@ -1,0 +1,608 @@
+[
+    {
+        "score": 0.90418386,
+        "show": {
+            "id": 45927,
+            "url": "https://www.tvmaze.com/shows/45927/home",
+            "name": "Home",
+            "type": "Documentary",
+            "language": "English",
+            "genres": [],
+            "status": "To Be Determined",
+            "runtime": null,
+            "averageRuntime": 34,
+            "premiered": "2020-04-17",
+            "ended": null,
+            "officialSite": "https://apple.co/_Home",
+            "schedule": {
+                "time": "",
+                "days": []
+            },
+            "rating": {
+                "average": null
+            },
+            "weight": 87,
+            "network": null,
+            "webChannel": {
+                "id": 310,
+                "name": "Apple TV+",
+                "country": null,
+                "officialSite": "https://tv.apple.com/"
+            },
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": 379326,
+                "imdb": "tt8068900"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/252/630439.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/252/630439.jpg"
+            },
+            "summary": "<p><b>Home</b> offers viewers a never-before-seen look inside the world's most innovative homes. Each episode unveils the boundary-pushing imagination of the visionaries who dared to dream and build them.</p>",
+            "updated": 1655433735,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/45927"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/2348195"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.87701297,
+        "show": {
+            "id": 41233,
+            "url": "https://www.tvmaze.com/shows/41233/home",
+            "name": "Home",
+            "type": "Scripted",
+            "language": "English",
+            "genres": [
+                "Comedy"
+            ],
+            "status": "Ended",
+            "runtime": 30,
+            "averageRuntime": 30,
+            "premiered": "2019-03-05",
+            "ended": "2020-03-11",
+            "officialSite": "https://www.channel4.com/programmes/home",
+            "schedule": {
+                "time": "22:00",
+                "days": [
+                    "Wednesday"
+                ]
+            },
+            "rating": {
+                "average": 6.5
+            },
+            "weight": 50,
+            "network": {
+                "id": 45,
+                "name": "Channel 4",
+                "country": {
+                    "name": "United Kingdom",
+                    "code": "GB",
+                    "timezone": "Europe/London"
+                },
+                "officialSite": "https://www.channel4.com/"
+            },
+            "webChannel": null,
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": 360271,
+                "imdb": "tt9883888"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/191/477743.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/191/477743.jpg"
+            },
+            "summary": "<p>Sami, an asylum-seeker from Syria arrives in Britain and finds himself living with a family in Dorking, Surrey. Over the next few months, while Sami waits for his application to be processed, he learns more than he expected about the people he's living with, himself, and his own family somewhere in Europe.</p>",
+            "updated": 1621160975,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/41233"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/1796864"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.7922792,
+        "show": {
+            "id": 43242,
+            "url": "https://www.tvmaze.com/shows/43242/home",
+            "name": "Home",
+            "type": "Scripted",
+            "language": "Hindi",
+            "genres": [
+                "Drama"
+            ],
+            "status": "Ended",
+            "runtime": 25,
+            "averageRuntime": 25,
+            "premiered": "2018-08-29",
+            "ended": "2018-09-21",
+            "officialSite": null,
+            "schedule": {
+                "time": "",
+                "days": [
+                    "Wednesday",
+                    "Friday"
+                ]
+            },
+            "rating": {
+                "average": null
+            },
+            "weight": 12,
+            "network": null,
+            "webChannel": {
+                "id": 335,
+                "name": "ALT Balaji",
+                "country": {
+                    "name": "India",
+                    "code": "IN",
+                    "timezone": "Asia/Kolkata"
+                },
+                "officialSite": null
+            },
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": 351671,
+                "imdb": "tt8325314"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/207/517696.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/207/517696.jpg"
+            },
+            "summary": "<p>The Sethis are a typical next-door, middle-class family. They hold on to their values and find happiness in little things. But their world comes crashing down when they are served an eviction notice by the authorities. What will they do to save their home? Will they succeed in saving their home or will their attempts go in vain? Watch how the Sethi family fight for their Home--their everything.</p>",
+            "updated": 1564790029,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/43242"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/1690468"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.702008,
+        "show": {
+            "id": 52312,
+            "url": "https://www.tvmaze.com/shows/52312/home-economics",
+            "name": "Home Economics",
+            "type": "Scripted",
+            "language": "English",
+            "genres": [
+                "Comedy",
+                "Family"
+            ],
+            "status": "Running",
+            "runtime": 30,
+            "averageRuntime": 29,
+            "premiered": "2021-04-07",
+            "ended": null,
+            "officialSite": "https://abc.com/shows/home-economics",
+            "schedule": {
+                "time": "21:30",
+                "days": [
+                    "Wednesday"
+                ]
+            },
+            "rating": {
+                "average": 5.8
+            },
+            "weight": 98,
+            "network": {
+                "id": 3,
+                "name": "ABC",
+                "country": {
+                    "name": "United States",
+                    "code": "US",
+                    "timezone": "America/New_York"
+                },
+                "officialSite": "https://abc.com/"
+            },
+            "webChannel": null,
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": 354960,
+                "imdb": "tt9214684"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/422/1057469.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/422/1057469.jpg"
+            },
+            "summary": "<p><b>Home Economics</b> looks at the relationship between three adult siblings: one in the 1 percent, one middle-class, and one barely holding on.</p>",
+            "updated": 1666758311,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/52312"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/2404446"
+                },
+                "nextepisode": {
+                    "href": "https://api.tvmaze.com/episodes/2411043"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.7012245,
+        "show": {
+            "id": 26796,
+            "url": "https://www.tvmaze.com/shows/26796/ravens-home",
+            "name": "Raven's Home",
+            "type": "Scripted",
+            "language": "English",
+            "genres": [
+                "Comedy",
+                "Children",
+                "Family"
+            ],
+            "status": "Running",
+            "runtime": 30,
+            "averageRuntime": 29,
+            "premiered": "2017-07-21",
+            "ended": null,
+            "officialSite": "https://disneynow.com/shows/ravens-home",
+            "schedule": {
+                "time": "21:00",
+                "days": [
+                    "Friday"
+                ]
+            },
+            "rating": {
+                "average": 4.3
+            },
+            "weight": 96,
+            "network": {
+                "id": 78,
+                "name": "Disney Channel",
+                "country": {
+                    "name": "United States",
+                    "code": "US",
+                    "timezone": "America/New_York"
+                },
+                "officialSite": null
+            },
+            "webChannel": {
+                "id": 83,
+                "name": "DisneyNOW",
+                "country": {
+                    "name": "United States",
+                    "code": "US",
+                    "timezone": "America/New_York"
+                },
+                "officialSite": null
+            },
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": 326569,
+                "imdb": "tt6311972"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/402/1006342.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/402/1006342.jpg"
+            },
+            "summary": "<p><b>Raven's Home</b> picks up with longtime best friends Raven and Chelsea, who are now each divorced with kids of their own, raising their children – Raven's 11-year-old twins Booker and Nia, and Chelsea's 9-year-old son Levi – under one roof, in a chaotic but fun household that often includes the twin's best friend and neighbor Tess. Unbeknownst to her kids, Raven still catches glimpses of the future, and unbeknownst to her, Booker has just learned he has these same abilities. Hilarity ensues as Raven and Booker's visions collide, but no matter the situation, they figure everything out together as one big happy family.</p>",
+            "updated": 1666324360,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/26796"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/2391447"
+                },
+                "nextepisode": {
+                    "href": "https://api.tvmaze.com/episodes/2391448"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.7001668,
+        "show": {
+            "id": 43084,
+            "url": "https://www.tvmaze.com/shows/43084/home-invasion",
+            "name": "Home Invasion",
+            "type": "Scripted",
+            "language": "English",
+            "genres": [
+                "Comedy",
+                "Science-Fiction"
+            ],
+            "status": "To Be Determined",
+            "runtime": null,
+            "averageRuntime": 24,
+            "premiered": "2021-06-20",
+            "ended": null,
+            "officialSite": "https://viaplay.no/serier/home-invasion",
+            "schedule": {
+                "time": "",
+                "days": []
+            },
+            "rating": {
+                "average": 6.8
+            },
+            "weight": 94,
+            "network": null,
+            "webChannel": {
+                "id": 103,
+                "name": "Viaplay",
+                "country": null,
+                "officialSite": "https://viaplay.com"
+            },
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": 391308,
+                "imdb": "tt10488860"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/320/801488.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/320/801488.jpg"
+            },
+            "summary": "<p><b>Home Invasion</b> centers on a family, that strives to fit into society. They have been sent by their evil outer space leader to invade the Earth. But their true identity is soon revealed, when two burglars break into their home. The family, who is enjoying life on Earth, starts to have second thoughts about their assignment. With the help of the burglars, they decide to stop the evil aliens' invasion.</p>",
+            "updated": 1625365132,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/43084"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/2116564"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.69862425,
+        "show": {
+            "id": 544,
+            "url": "https://www.tvmaze.com/shows/544/home-improvement",
+            "name": "Home Improvement",
+            "type": "Scripted",
+            "language": "English",
+            "genres": [
+                "Comedy",
+                "Family"
+            ],
+            "status": "Ended",
+            "runtime": 30,
+            "averageRuntime": 30,
+            "premiered": "1991-09-17",
+            "ended": "1999-05-25",
+            "officialSite": null,
+            "schedule": {
+                "time": "20:00",
+                "days": [
+                    "Friday"
+                ]
+            },
+            "rating": {
+                "average": 7.3
+            },
+            "weight": 90,
+            "network": {
+                "id": 3,
+                "name": "ABC",
+                "country": {
+                    "name": "United States",
+                    "code": "US",
+                    "timezone": "America/New_York"
+                },
+                "officialSite": "https://abc.com/"
+            },
+            "webChannel": null,
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": 3887,
+                "thetvdb": 77537,
+                "imdb": "tt0101120"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/4/11457.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/4/11457.jpg"
+            },
+            "summary": "<p>The universal themes of family, parenting, the battle of the sexes -- and of course, man's need for \"more power\" -- come to play each and every weekday on <b>Home Improvement</b>. Every episode finds Tim the \"Tool Man\" Taylor causing his share of goof-ups and mishaps and leaving his long-suffering wife, Jill, family and friends to mop up the mess.</p>",
+            "updated": 1633404440,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/544"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/50180"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.6977253,
+        "show": {
+            "id": 32426,
+            "url": "https://www.tvmaze.com/shows/32426/home-alone",
+            "name": "Home Alone",
+            "type": "Documentary",
+            "language": "English",
+            "genres": [
+                "Crime",
+                "Horror"
+            ],
+            "status": "Running",
+            "runtime": 60,
+            "averageRuntime": 60,
+            "premiered": "2017-10-12",
+            "ended": null,
+            "officialSite": "https://www.investigationdiscovery.com/tv-shows/home-alone/",
+            "schedule": {
+                "time": "22:00",
+                "days": [
+                    "Thursday"
+                ]
+            },
+            "rating": {
+                "average": null
+            },
+            "weight": 88,
+            "network": {
+                "id": 89,
+                "name": "Investigation Discovery",
+                "country": {
+                    "name": "United States",
+                    "code": "US",
+                    "timezone": "America/New_York"
+                },
+                "officialSite": null
+            },
+            "webChannel": null,
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": 335775,
+                "imdb": "tt7444776"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/369/924030.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/369/924030.jpg"
+            },
+            "summary": "<p>When night falls and you're the only one at home, the coziest of houses can transform into a sinister, unfamiliar labyrinth. A noise in the yard or an unfamiliar shadow down the hall can send shivers down the spine, especially when you discover there is someone else in the house. In the suspense-filled new series <b>Home Alone</b>, a quiet suburban house becomes the setting for unimaginable horror. Highlighting stories of revengeful exes who refuse to disappear, the victims find that the walls around them are no longer a safe sanctuary.</p>",
+            "updated": 1635259008,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/32426"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/1571984"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.6975417,
+        "show": {
+            "id": 46570,
+            "url": "https://www.tvmaze.com/shows/46570/sweet-home",
+            "name": "Sweet Home",
+            "type": "Scripted",
+            "language": "Korean",
+            "genres": [
+                "Horror",
+                "Science-Fiction",
+                "Thriller"
+            ],
+            "status": "Running",
+            "runtime": null,
+            "averageRuntime": 52,
+            "premiered": "2020-12-18",
+            "ended": null,
+            "officialSite": "https://www.netflix.com/title/81061734",
+            "schedule": {
+                "time": "",
+                "days": []
+            },
+            "rating": {
+                "average": 7.2
+            },
+            "weight": 88,
+            "network": null,
+            "webChannel": {
+                "id": 1,
+                "name": "Netflix",
+                "country": null,
+                "officialSite": "https://www.netflix.com/"
+            },
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": 374389,
+                "imdb": "tt11612120"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/285/712969.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/285/712969.jpg"
+            },
+            "summary": "<p>Adapted from a popular webtoon of the same name, <b>Sweet Home</b> is a VFX/SFX filled thriller based on the unique world in which people turn into monsters that reflect their internal desires. Cha Hyun Soo, a reclusive high school student who moves into a new apartment called Green Home after a personal tragedy, faces a series of life changing situations that brings him out to the world to save others. </p>",
+            "updated": 1661426439,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/46570"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/1973995"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.6950322,
+        "show": {
+            "id": 2796,
+            "url": "https://www.tvmaze.com/shows/2796/home-fires",
+            "name": "Home Fires",
+            "type": "Scripted",
+            "language": "English",
+            "genres": [
+                "Drama",
+                "Action",
+                "History"
+            ],
+            "status": "Ended",
+            "runtime": 60,
+            "averageRuntime": 60,
+            "premiered": "2015-05-03",
+            "ended": "2016-05-08",
+            "officialSite": null,
+            "schedule": {
+                "time": "21:00",
+                "days": [
+                    "Sunday"
+                ]
+            },
+            "rating": {
+                "average": 8
+            },
+            "weight": 83,
+            "network": {
+                "id": 35,
+                "name": "ITV",
+                "country": {
+                    "name": "United Kingdom",
+                    "code": "GB",
+                    "timezone": "Europe/London"
+                },
+                "officialSite": "https://www.itv.com/"
+            },
+            "webChannel": null,
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": 44715,
+                "thetvdb": 294973,
+                "imdb": "tt4015216"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/15/37741.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/15/37741.jpg"
+            },
+            "summary": "<p>In 1939 life for the women of Great Paxford changed forever. Suddenly parted from their men, they must rely on each other to get through the hard times ahead in the midst of a world war.</p>",
+            "updated": 1633980355,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/2796"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/674323"
+                }
+            }
+        }
+    }
+]

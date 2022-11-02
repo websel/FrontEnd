@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Sayı Tahmin Oyunu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">JS Sayı Tahmin Oyunu</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="txtTahmin" class="form-label">Tahmin</label>
+                    <input type="number" class="form-control" id="txtTahmin" aria-describedby="Tahmin">
+                </div>
+            </div>
+            <div class="col-md-2">
+                &nbsp;<br>
+                <button type="button" id="btnTahminEt" class="btn btn-dark">Tahmin Et</button>
+            </div>
+            <div class="col-md-2">
+                &nbsp;<br>
+                <button type="button" id="btnYeniOyun" class="btn btn-dark">Yeni Oyun</button>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <div id="mesaj" class="fs-5"></div>
+            </div>
+            <div class="col-md-3">
+                <div id="resim"></div>
+            </div>
+        </div>
+    </div>
+<script>
+    document.getElementById("btnTahminEt").setAttribute("disabled", true);
+    document.getElementById("txtTahmin").setAttribute("disabled", true);
+
+    document.querySelector("#btnYeniOyun").addEventListener("click",yeniOyun);
+    document.querySelector("#btnTahminEt").onclick = tahmin;
+    var PCSayi;
+    var sayac;
+    function yeniOyun(){
+        sayac = 0;
+        document.getElementById("btnTahminEt").removeAttribute("disabled");
+        document.getElementById("txtTahmin").removeAttribute("disabled");
+
+        PCSayi = Math.floor(Math.random() * 100) +1;
+        console.log(PCSayi);
+    }
+    function tahmin(){
+        sayac++;
+        let tahminSayi = Number(document.getElementById("txtTahmin").value);
+        if(tahminSayi == PCSayi){
+            document.getElementById("mesaj").innerText = "Bravo. " + sayac + " defada Bildiniz";
+            document.getElementById("resim").innerHTML = "<img src='images/tick.png' alt='Bildiniz' />";
+        }
+        else if(tahminSayi>PCSayi){
+            document.getElementById("mesaj").innerText = "Aşağı";
+            document.getElementById("resim").innerHTML = "<img src='images/arrow-down.png' alt='Aşağı in' width='50' />";
+        }
+        else{
+            document.getElementById("mesaj").innerText = "Yukarı";
+            document.getElementById("resim").innerHTML = "<img src='images/arrow-up.png' alt='Yukarı çık' width='50' />";
+        }
+        // ilk yeni oyun butonuna basılması gerekli
+        // yeni oyun butonuna basmadan Tahmin et butonu aktif olmasın
+        // yeni oyuna basınca 1-100 arası sayı üretilecek.değişkende saklanacak - global scope
+        // Tahmine basınca kullanıcının girdiği sayı ile PC ürettiği sayı karşılaştırılacak
+        // eğer tahmin sayi pc sayısından büyükse Aşağı yazacak
+        // eğer tahmin sayı pc sayısından küçükse yukarı yaacak
+        // eğer tahmin sayı pc syısına eşitse bravo bildiniz yazacak.
+        // sayac birer artıralacak
+    }
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

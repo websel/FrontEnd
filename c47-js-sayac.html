@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayac</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+      .sayac{background-color: honeydew;padding: 60px 20px;text-align: center;}
+      .sayac-number{font-size: 3rem;}
+      .sayac-text{font-size: 1.5rem;color:navy}
+      .sayac-item:not(:last-child){border-right:solid 1px;}
+    </style>
+</head>
+<body>
+      <div class="container-fluid">
+        <div class="sayac">
+          <div class="row">
+            <div class="col-md-3 sayac-item">
+              <div class="sayac-number">78</div>
+              <div class="sayac-text">Customers</div>
+            </div>
+            <div class="col-md-3 sayac-item">
+              <div class="sayac-number">300</div>
+              <div class="sayac-text">Web Sites</div>
+            </div>
+            <div class="col-md-3 sayac-item">
+              <div class="sayac-number">10000</div>
+              <div class="sayac-text">Monthly Traffic</div>
+            </div>
+            <div class="col-md-3 sayac-item">
+              <div class="sayac-number">2300</div>
+              <div class="sayac-text">Projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+<script>
+  var sayiDizi = document.querySelectorAll(".sayac-number");
+  for (const us of sayiDizi) {
+    artir(us);
+  }
+  // başlangıç değeri ulaşılacak sayının yüzde 30 u
+  // artış miktarı ulaşılacak sayının yüzde 5i olsun
+  function artir(ulasSayi){
+    var ulasilacakSayi = ulasSayi.innerText;
+    var bslDeger = Math.floor(ulasilacakSayi * 30 / 100);
+    var artisMiktari = Math.floor(ulasilacakSayi * 5 / 100);
+    var artanSayi = bslDeger;
+    setInterval(()=>{
+      artanSayi += artisMiktari
+      
+      if(artanSayi>ulasilacakSayi){
+        ulasSayi.innerText = ulasilacakSayi;
+        clearInterval();
+      }
+      else{
+        ulasSayi.innerText = artanSayi;
+      }
+    },100);
+  }
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

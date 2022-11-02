@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">Error Handling</h1>
+      <p>try{ ... } catch(ex){ ... } finally{ ... }</p>
+        <table class="table" id="tabloNotlar">
+          <thead>
+            <tr>
+              <th>Okul No</th>
+              <th>Öğrenci Adı</th>
+              <th>Puan</th>
+              <th>Sil</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+        <div id="mesaj"></div>
+    </div>
+<script>
+
+  const data = [
+    {id:1, okulNo: "435", name:"Pakize", puan:85},
+    {id:2, okulNo: "437", name:"Orhan Can", puan:25},
+    {id:3, okulNo: "438", name:"Emir Rüzgar", puan:68},
+    {id:4, okulNo: "439", name:"Derin", puan:74},
+    {id:5, okulNo: "441", name:"Ada", puan:91},
+    {id:6, okulNo: "443", name:"Latife", puan:45},
+    {id:17, okulNo: "451", name:"Osman", puan:53},
+    {id:32, okulNo: "457", name:"Murat", puan:62},
+    {id:9, okulNo: "466", name:"Gürkan", puan:66},
+    {id:10, okulNo: "467", name:"Derya", puan:39}
+  ]
+  var dnm = "56w";
+  try{
+    var sayi = Number(dnm);
+    if(!sayi) throw("sayı değil"); // throw hata fırlatma işlemi yapar
+  }
+  catch(ex){ // fırlatılan hatayı yakalar
+    alert(ex)
+  }
+  finally{ // try-catch den sonra işlenir. mecbur değildir.
+    console.log("try-catch den çıktı");
+  }
+
+  var tableStr = "";
+  //var syc = 0;
+  for(var kayit of data){
+    tableStr += `<tr id="ogrSatir-${kayit.id}" class="ogrSatir">
+            <td class="ogrNo">${kayit.okulNo}</td>
+            <td class="ogrAdi">${kayit.name}</td>
+            <td class="ogrNot">${kayit.puan}</td>
+            <td><button type="button" class="btn btn-sm btn-danger btn-sil" onclick="satirSil(${kayit.id})">Sil</button></td>
+          </tr>`;
+    //syc++;
+  }
+  document.querySelector("#tabloNotlar tbody").innerHTML = tableStr;
+  
+    function satirSil(sira){
+      var butonlar = document.querySelectorAll(".btn-sil");
+      let idAdi = "ogrSatir-" + sira;
+      console.log(butonlar);
+      
+      var cevap=confirm(document.getElementById(idAdi).querySelector("td:nth-child(2)").innerText + " adlı öğrenciyi silmek istiyor musunuz?");
+      if(cevap){
+        document.getElementById(idAdi).remove();
+      }
+    }
+    
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

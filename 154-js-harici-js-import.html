@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Storage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      
+      <div id="mesaj"></div>
+      <div id="mesaj2" class="btn btn-info me-5">Sayı Üret</div>
+      <div id="mesaj3" onclick="fonksiyon()" class="fs-4">Çalıştır</div>
+    </div>
+
+<script type="module">
+    import message, {nmbrSortAsc,strSortAsc,strSortDesc} from "./assets/js/sorting.js";
+    
+    document.getElementById("mesaj").innerHTML = message();
+    
+    var sayilar=[];
+    for(let i=0;i<5;i++){
+        var sayi=Math.floor(Math.random() * 100)+1;
+        sayilar.push(sayi);
+    }
+    console.log(sayilar);
+    nmbrSortAsc(sayilar);
+    console.log(nmbrSortAsc(sayilar));
+
+    var dizi = ["Pazartesi","Salı","Çarşamba","Perşembe","Cuma"];
+    console.log(dizi);
+    console.log(strSortAsc(dizi));
+    console.log(strSortDesc(dizi));
+    
+    // live Server 
+    
+    </script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Harf Not</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        .mor{color:violet;}
+        .mor-bg{background-color: violet;}
+        .name{font-size:2rem;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik">Notu Harfe Çevirme</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Butona basıldığında, iki textbox içinde 100 lük sistemde  girilen notları kontrol edip, ortalamasını bulan ve bunu harf sistemine çeviren fonksiyonu yazınız. 90-100: A - 80-90: B ... 0-50:F
+                </h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="txtNot1" class="form-label">1. Not</label>
+                        <input type="number" class="form-control" id="txtNot1" aria-describedby="not1" min="0" max="100">
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtNot2" class="form-label">2. Not</label>
+                        <input type="number" class="form-control" id="txtNot2" aria-describedby="not2" min="0" max="100">
+                    </div>
+                    <button type="submit" id="btnGonder" class="btn btn-primary">HESAPLA</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="mesaj" class="fs-2"></div>
+            </div>
+        </div>
+    </div>
+<script>
+    document.getElementById("btnGonder").addEventListener("click",gonder);
+
+    function gonder(){
+        var not1 = Number(document.getElementById("txtNot1").value);
+        var not2 = Number(document.getElementById("txtNot2").value);
+        if(not1>=0 && not1<=100){
+            if(not2>=0 && not2 <= 100){
+                var ortalama = Math.round((not1 + not2) / 2);
+                document.getElementById("mesaj").innerText = notHesapla(ortalama);
+            }
+            else{
+                document.getElementById("mesaj").innerText = "2. Not 0 ile 100 arasında olmalıdır";
+            }
+        }
+        else{
+            document.getElementById("mesaj").innerText = "1. Not 0 ile 100 arasında olmalıdır";
+        }
+    }
+
+    function notHesapla(ort){
+        let harfNot = "";
+        if(ort<50){
+            harfNot = "F";
+        }
+        else if(ort>=50 && ort < 70){
+            harfNot = "D";
+        }
+        else if(ort>=70 && ort<80){
+            harfNot = "C";
+        }
+        else if(ort>=80 && ort<90){
+            harfNot = "B";
+        }
+        else{
+            harfNot = "A";
+        }
+
+        return harfNot;
+    }
+    
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

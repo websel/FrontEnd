@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch - tvmaze</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+      .genres{font-style: italic;font-size: small;color:rgb(136, 134, 134);}
+      .network{font-size: small;color:navy}
+      .episode-item{background: linear-gradient(#fefefe,#d5dfe4);padding:15px;border:solid 1px #b4b4e6; border-radius: 10px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Fetch - tvmaze</h1>
+      <form>
+        <div class="mb-3">
+          <label for="txtSearch" class="form-label">Search TV Shows</label>
+          <input type="text" id="txtSearch" class="form-control" name="txtSearch" />
+        </div>
+
+        <input type="hidden" id="hdnDil" name="hdnDil" />
+        <input type="button" id="btnSearch" class="btn btn-success" value="GÖNDER" />
+      </form>
+      
+      <div class="spinner-border d-none" role="status" id="spinner">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+
+      <div id="mesaj"></div>
+      <div id="detaylar"></div>
+
+      <div id="hata"></div>
+
+      <!-- Modal -->
+<div class="modal fade" id="episodesModal" tabindex="-1" aria-labelledby="episodesModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="episodesModalLabel">...</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+<script>
+  document.querySelector("#btnSearch").addEventListener("click",()=>{
+    //#region show search
+    var searchText = document.getElementById("txtSearch").value;
+    document.getElementById("spinner").classList.remove("d-none");
+    var sonuc="";
+    // get method - veri çekmek
+    fetch("https://api.tvmaze.com/search/shows?q=" + searchText)
+    .then(resp=>resp.json())
+    .then(data=>{ // data geldi
+      document.getElementById("spinner").classList.add("d-none");
+      console.log(data);
+      //console.log(data.length);
+      var syc=1;
+      data.forEach(dt => { // data içinde gez
+        if(syc % 4 == 1){
+          sonuc += "<div class='row mt-4'>";
+        }
+        if(dt.show.genres!=null){
+          if(dt.show.genres.toString().match(/crime/i)){
+
+          
+        sonuc+=`<div class="col-md-3">
+                <div class="card">`;
+                  if(dt.show.image!= null){
+                    sonuc+=`<img src="${dt.show.image.medium}" class="card-img-top" alt="${dt.show.name}">`;
+                  }
+                  else{
+                    sonuc+=`&nbsp;`;
+                  }
+          sonuc+=`<div class="card-body">
+                    <h5 class="card-title">${dt.show.name}</h5>
+                    <p class="card-text">${dt.show.summary}</p>
+                    <div class="d-flex justify-content-between">`;
+                      if(dt.show.genres != null){
+                        sonuc += `<div class="genres">${dt.show.genres}</div>`
+                      }
+                      else{
+                        sonuc +="<div class='genres'>&nbsp;</div>";
+                      }
+                      if(dt.show.network != null){
+                        sonuc += `<div class="network">${dt.show.network.name}</div>`
+                      }
+                      else{
+                        sonuc +="<div class='network'>&nbsp;</div>";
+                      }
+        //#endregion         
+                      sonuc+=`</div>
+                    <div class="btn btn-sm btn-info" onclick="getEpisodes(${dt.show.id},'${dt.show.name}')" data-bs-toggle="modal" data-bs-target="#episodesModal">Episodes</div>
+                    <a href="#" onclick="getDetails(${dt.show.externals.thetvdb})" class="btn btn-primary mt-3">Details</a>
+                  </div>
+                </div>
+                </div>`;
+                syc++;
+          }
+        }
+        if(syc % 4==0 || syc==data.length){
+          sonuc += "</div>";
+        }
+        
+      });
+      document.getElementById("mesaj").innerHTML = sonuc;
+    })
+    .catch(err=>{
+      console.log(err);
+      document.getElementById("hata").innerHTML = `<div class="alert alert-danger">HATA!<br>${err}</div>`;
+    });
+  })
+
+  function getDetails(thetvdb){
+    fetch("https://api.tvmaze.com/lookup/shows?thetvdb="+ thetvdb)
+    .then(resp=>resp.json())
+    .then(data=>{
+      console.log(data);
+      document.getElementById("mesaj").classList.add("d-none");
+      document.getElementById("detaylar").classList.remove("d-none");
+      let detay = `<div class="row">
+                      <div class="col-md-6">
+                        <img src="${data.image.medium}" class="img-fluid" alt="${data.name}" />
+                      </div>
+                      <div class="col-md-6">
+                        <table class="table">
+                          <tr>
+                            <td>Name of the TV Show:</td>
+                            <td>${data.name}</td>
+                          </tr>
+                          <tr>
+                            <td>Language:</td>
+                            <td>${data.language}</td>
+                          </tr>
+                          <tr>
+                            <td>Genres:</td>
+                            <td>${data.genres}</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="btn btn-sm btn-primary mt-5" onclick="geri()">Back</div>`;
+        document.getElementById("detaylar").innerHTML = detay; // SPA - Single Page Application
+    })
+    .catch(err=>{
+      console.log(err);
+      document.getElementById("detaylar").innerHTML = `<div class="alert alert-danger">HATA!<br>${err}</div>`;
+    })
+  }
+
+  function geri(){
+    document.getElementById("mesaj").classList.remove("d-none");
+    document.getElementById("detaylar").classList.add("d-none");
+  }
+
+  function getEpisodes(id,baslik){
+    var sonuc="";
+    document.getElementById("episodesModalLabel").innerText = baslik + " Episodes";
+    fetch("https://api.tvmaze.com/shows/" + id + "/episodes")
+    .then(resp=>resp.json())
+    .then(data=>{ // data geldi
+      document.getElementById("spinner").classList.add("d-none");
+      console.log("--------");
+      console.log(data);
+      var syc=1;
+      data.forEach(dt => { // data içinde gez
+        sonuc+=`<div class="episode-item mt-4">
+                  <div class="row">
+                    <div class="col-md-3">`;
+                      if(dt.image!= null){
+                    sonuc+=`<img src="${dt.image.medium}" class="img-fluid" alt="${dt.name}">`;
+                  }
+                  else{
+                    sonuc+=`&nbsp;`;
+                  }
+                  sonuc+=`</div>
+                    <div class="col-md-9">
+                      <div class="d-inline-block">Season: ${dt.season}</div>
+                      <div class="d-inline-block ms-4">Number: ${dt.number}</div>
+                      <h3>${dt.name}</h3>
+                      <div class="d-inline-block">${dt.airdate}</div>
+                      <div class="d-inline-block ms-4">${dt.airtime}</div>
+                    </div>
+                  </div>
+                </div>`;
+        syc++;
+      });
+      document.querySelector(".modal-body").innerHTML = sonuc;
+    })
+    .catch(err=>{
+      console.log(err);
+      document.getElementById("hata").innerHTML = `<div class="alert alert-danger">HATA!<br>${err}</div>`;
+    });
+  }
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

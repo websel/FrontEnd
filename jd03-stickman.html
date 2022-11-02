@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Array</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <style>
+        .p1,.p2,.p3,.p4,.p5,.p6{visibility: hidden;}
+        .soru-kutu{border-bottom: solid 3px black;width: 50px;height:45px;font-size:35px;text-align:center;background-color: azure;margin-right: 10px;display: inline-block;}
+        .bosluk{background-color: beige;border-bottom: none !important;}
+        .harf-kutu{background-color: darkgreen; color:white;font-size:25px;text-align:center;width: 40px; margin-right:5px;border: solid 2px rgb(1, 185, 1);padding:4px 10px;margin-bottom:10px;cursor:pointer;display: inline-block;}
+        #soz-kutulari{border:solid 15px rgb(2, 123, 157);padding:25px;background-color: beige;border-radius: 15px;}
+        .harf-pasif{background-color: rgb(106, 126, 106) !important;cursor:default !important;}
+        .kelime-kutu{margin-right: 25px;display: inline-block;}
+        #harfler{width:700px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="anabaslik" class="p-5">Stickman</h1>
+        <div class="row">
+          <div class="col-md-9">
+            <div id="soz-kutulari">
+
+            </div>
+            <div id="harfler" class="mt-5">
+
+            </div>
+          </div>
+            <div class="col-md-2 position-relative ms-3">
+                <svg height="100" width="100" class="p1">
+                    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="white" />
+                    Sorry, your browser does not support inline SVG.  
+                  </svg> 
+                <svg height="110" width="80" class="p3" style="position:absolute;top:103px;left:63px;">
+                    <line x1="0" y1="0" x2="80" y2="80" style="stroke:rgb(0,0,0);stroke-width:3" />
+                    Sorry, your browser does not support inline SVG.
+                  </svg>
+                <svg height="110" width="80" class="p4" style="position:absolute;top:103px;left:-17px;">
+                    <line x1="80" y1="0" x2="0" y2="80" style="stroke:rgb(0,0,0);stroke-width:3" />
+                    Sorry, your browser does not support inline SVG.
+                  </svg>
+                <svg height="110" width="80" class="p5" style="position:absolute;top:217px;left:63px;">
+                    <line x1="0" y1="0" x2="80" y2="80" style="stroke:rgb(0,0,0);stroke-width:3" />
+                    Sorry, your browser does not support inline SVG.
+                  </svg>
+                <svg height="110" width="80" class="p6" style="position:absolute;top:217px;left:-17px;">
+                    <line x1="80" y1="0" x2="0" y2="80" style="stroke:rgb(0,0,0);stroke-width:3" />
+                    Sorry, your browser does not support inline SVG.
+                  </svg>
+                <svg height="130" width="6" class="p2" style="position:absolute;top:90px;left:60px;">
+                    <line x1="3" y1="0" x2="3" y2="290" style="stroke:rgb(0,0,0);stroke-width:3" />
+                    Sorry, your browser does not support inline SVG.
+                  </svg>
+            </div>
+        </div>
+        
+    </div>
+<script>
+    var sozler=["Acele bir ağaçtır, meyvesi pişmanlık","Adalet ile zulüm bir yerde barınmaz","Alma mazlumun âhını, çıkar âheste âheste","Anlayana sivrisinek saz, anlamayana davul zurna az","Bal bal demekle ağız tatlanmaz","Bana dokunmayan yılan bin yaşasın","Bugünkü tavuk yarınki kazdan iyidir","Büyük lokma ye, büyük söz söyleme","Can çıkmayınca huy çıkmaz","Çıkmadık candan umut kesilmez","Çok havlayan köpek ısırmaz","Dağ dağa kavuşmaz, insan insana kavuşur","Davul dengi dengine çalar","Demir nemden, insan gamdan çürür","Doğmadık çocuğa kaftan biçilmez","Doğru söyleyeni dokuz köyden kovarlar","Esirgenen göze çöp batar","Fukaranın tavuğu tek tek yumurtlar","Garip kuşun yuvasını Allah yapar","Güvenme dostuna, saman doldurur postuna","Güzün gelişi yazdan bellidir","Harman dövmek keçinin işi değil","Hayır dile komşuna, hayır gele başına","Her Firavun’un bir Musa’sı olur","Her kuşun eti yenmez","Horozu çok olan köyde sabah geç olur","Irmaktan geçerken at değiştirilmez","İğneyi kendine, çuvaldızı başkasına batır","İki cambaz bir ipte oynamaz","İsteyenin bir yüzü kara, vermeyenin iki yüzü","İşten artmaz, dişten artar","İyilik et, denize at, balık bilmezse Hâlik bilir","Kaçan balık büyük olur.","Keçiyi yardan uçuran bir tutam ottur","Kelin ilâcı olsa başına sürer","Korkunun ecele faydası yoktur","Kul azmayınca Hak yazmaz.","Kul sıkışmayınca Hızır yetişmez","Lâfla peynir gemisi yürümez","Leyleğin ömrü laklakla geçer","Mart kapıdan baktırır, kazma-kürek yaktırır","Merhametten maraz doğar","Mum dibine ışık vermez","Ne doğrarsan aşına, o çıkar kaşığına","Ne oldum dememeli, ne olacağım demeli","Namaza meyli olmayanın kulağı ezanda olmaz","Oduncunun gözü omçada, dilencinin gözü çömçede","Oynamasını bilmeyen gelin yerim dar demiş","Ölmüş eşek, kurttan korkmaz","Para ile imanın kimde olduğu belli olmaz","Rüzgâr esmeyince yaprak kıpırdamaz","Sabrın sonu selâmettir","Sarımsağı gelin etmişler, kırk gün kokusu çıkmamış","Serçeden korkan darı ekmez","Sinek küçüktür ama mide bulandırır","Sükût ikrardan gelir","Şeriatın kestiği parmak acımaz","Tarlaya saban, sürüye çoban","Tembele iş buyur, sana akıl öğretsin.","Tilkinin dönüp dolaşıp geleceği yer kürkçü dükkanıdır","Ummadığın taş baş yarar","Üzüm üzüme baka baka kararır","Vakitsiz öten horozun başını keserler","Vermeyince Mabud, neylesin Mahmud","Yabancı koyun kenara yatar.","Yalnız öküz çifte koşulmaz","Yarası olan gocunur","Yatan aslandan, gezen tilki yeğdir","Yavuz hırsız, ev sahibini bastırır","Yolcu yolunda gerek","Yüz verme arsız olur, az verme hırsız olur","Zengin arabasını dağdan aşırır, züğürt düz ovada yolunu şaşırır","Zorla güzellik olmaz"];
+
+    var hataSayisi = 0;
+    var dogruSayisi = 0;
+    // rastgele bir tanesini seç
+    var rastgeleSayi = Math.floor(Math.random()*sozler.length);
+    var soz = sozler[rastgeleSayi];
+    console.log(soz);
+    // yabancı karakterleri temizle ve küçük harfe çevir
+    soz = temizle(soz);
+    console.log(soz);
+    // ekrana basalım
+    var soruKod = "";
+    var soruDizi = soz.split("");
+
+     // Soru harflerinden boşluk karakterleri olmayan bir dizi oluşturalım
+    let sozBosluksuz = soz.replace(/ /g,"");
+    var soruDiziBosluksuz = sozBosluksuz.split("");
+
+    // kelime uzunluklarını da almamız gerekiyor
+    // kelimeler yarıda kesilmesin diye.  1 satıra 12 harf sığıyor.
+    // her bir kelimeyi kutu kutu ekleyebiliriz. Sığmayan düşer.
+    // var kelimeDizi = soz.split(" ");
+    let klmsyc = 0;
+    for(let soruHarf of soruDizi){
+      if(klmsyc == 0) soruKod+="<div class='kelime-kutu'>";
+      if(soruHarf != " "){
+        soruKod += `<div class='soru-kutu'>
+
+        </div>`;
+      }
+      else{
+        soruKod+="</div><div class='kelime-kutu'>"
+      }
+      if(klmsyc == soruDizi.length-1) soruKod+="</div>";
+      klmsyc++;
+    }
+    document.getElementById("soz-kutulari").innerHTML = soruKod;
+
+    //tıklanacak harfleri ekrana yazalım
+    var harfler = ["a","b","c","ç","d","e","f","g","ğ","h","ı","i","j","k","l","m","n","o","ö","p","r","s","ş","t","u","ü","v","y","z"];
+    var basHarf = "";
+    for(let harf of harfler){
+      basHarf += `<div class="harf-kutu">${harf}</div>`;
+    }
+    document.getElementById("harfler").innerHTML = basHarf;
+    // tıklanacak harflere addEvenListener Ekleyelim
+    document.querySelectorAll(".harf-kutu").forEach(kutu =>{
+      kutu.addEventListener("click",(e)=>{
+        //tıklanan harfi pasif yap
+        if(!e.target.classList.contains("harf-pasif")){  // daha önce basılmamışsa
+          e.target.classList.add("harf-pasif");
+          let harfSiralari = [];
+         
+          for(let harf in soruDiziBosluksuz){
+            if(soruDiziBosluksuz[harf] == e.target.innerText){
+              harfSiralari.push(harf); // tıklanan harften varsa index numaralarını bir diziye kaydet
+            }
+          }
+          // bu dizi boş değilse yerlerini bul ve içine yaz
+          if(harfSiralari.length>0){ // ------- HARF VARSA  -------------
+            dogruSayisi += harfSiralari.length;
+            // tüm soru kutuları bir diziye al ve belirlenen sıraları bul
+            var soruKutulari = document.querySelectorAll(".soru-kutu");
+
+            
+            for (let kutu in soruKutulari){
+              for(let hs of harfSiralari){ // harf sıralarındaki sayılar soru kutu indexlerine eşitse
+                if(hs == kutu){
+                  soruKutulari[kutu].innerText = soruDiziBosluksuz[hs];
+                }
+              }
+            }
+
+            // ---- BULUNDU -- Tüm harfler Açıldı
+            if(soruDiziBosluksuz.length == dogruSayisi){
+              harfPasifYap();
+            }
+          }
+          else{   // -------- HARF YOKSA  ------------
+            hataSayisi++;
+            document.querySelector(".p" + hataSayisi).style.visibility = "visible";
+            
+            if(hataSayisi == 6){  //----- Oyun Bitti ------
+              // henüz tıklanmamış harfleri pasif yapalım
+              harfPasifYap();
+              // açılmamış harfleri açalım
+              harfleriAc();
+            }
+          }
+        }
+      })
+    })
+    
+    function harfPasifYap(){
+      let basilanHarfler = document.querySelectorAll(".harf-kutu");
+      for(let harf of basilanHarfler){
+        yavasGoster(harf);
+      }
+    }
+
+    function yavasGoster(harf){
+      setTimeout(()=>{
+      if(!harf.classList.contains("harf-pasif")){
+        harf.classList.add("harf-pasif");
+      }
+      });
+    }
+
+    const harfleriAc = async() =>{
+      let sozHarfler = document.querySelectorAll(".soru-kutu");
+      for(let harf in sozHarfler){
+        setTimeout(()=>{
+          if(sozHarfler[harf].innerText==""){
+            sozHarfler[harf].innerText = soruDiziBosluksuz[harf];
+          }
+        },500);
+      }
+    }
+
+    function temizle(cumle){
+      cumle = cumle.replace(/,/g,"");
+      cumle = cumle.replace(/-/g," ");
+      cumle = cumle.replace(/'/g,"");
+      cumle = cumle.replace(/\./g,"");
+      cumle = cumle.replace(/â/g,"a");
+      cumle = cumle.replace(/û/g,"u");
+      cumle = cumle.toLowerCase();
+
+      return cumle
+    }
+</script>
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>
