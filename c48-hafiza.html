@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayac</title>
+
+    <style>
+      @font-face {font-family: 'digital-7';
+                  src: url("fonts/digital-7.ttf")
+                  format('truetype');
+                  font-weight: normal;
+                  font-style: normal;
+      }
+      .kartbg{background-repeat: no-repeat;background-size: cover;}
+      #sure{font-family: 'digital-7', sans-serif;font-size: 2rem;color:#997d00;background-color: #f8e8a3;display: inline-block;padding: 10px 30px;min-width: 150px;border:solid 4px rgb(153, 125, 0); border-top:none;box-shadow: 5px 3px 5px rgba(153,125,0,0.4);}
+
+      .kutu{border:solid 1px; border-radius: 15px;height: 100px;width: 201px;font-size: 1.6rem;display: flex;align-items: center;justify-content: center;cursor: pointer;box-shadow: 4px 6px 3px rgba(0,0,0,0.3);position: relative;top:0;left:0;transition: .3s ease-out;}
+      .kutu:hover{box-shadow: 1px 2px 1px rgba(0,0,0,0.7);top:3px;left:4px;}
+      .gizle{visibility: hidden;}
+      #settingsModal .modal-body img{cursor: pointer;box-shadow: 3px 2px 4px rgba(0,0,0,0.3);transition: .2s;}
+      #settingsModal .modal-body img:hover{transform: scale(1.1);}
+      .cn-kutu{cursor: pointer;border: solid 1px; padding: 15px 25px;font-size: 1.5rem;font-weight: bold;}
+    </style>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <div id="sure" class="text-center fw-bold"></div>
+      <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#settingsModal">
+          Settings
+        </button>
+      </div>
+    </div>
+   
+    <div id="mesaj"></div>
+
+    <p class="mt-5 text-center">
+      <button type="button" class="btn btn-success" onclick="yeniOyun()">Yeni Oyun</button>
+    </p>
+
+    <!-- Modal -->
+<div class="modal fade" id="bildinModal" tabindex="-1" aria-labelledby="bildinModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="bildinModalLabel">TEBRİKLER</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="bildinMesaj"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="settingsModalLabel">SETTINGS</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            
+            <h3>Background Image</h3>
+            <div class="row">
+              <div class="col-md-2"><img src="images/kart-bg1.jpg" alt="bg1" class="img-fluid" onclick="saveBG(1)"></div>
+              <div class="col-md-2"><img src="images/kart-bg2.jpg" alt="bg2" class="img-fluid" onclick="saveBG(2)"></div>
+              <div class="col-md-2"><img src="images/kart-bg3.jpg" alt="bg3" class="img-fluid" onclick="saveBG(3)"></div>
+              <div class="col-md-2"><img src="images/kart-bg4.jpg" alt="bg4" class="img-fluid" onclick="saveBG(4)"></div>
+              <div class="col-md-2"><img src="images/kart-bg5.jpg" alt="bg5" class="img-fluid" onclick="saveBG(5)"></div>
+              <div class="col-md-2"><img src="images/kart-bg6.jpg" alt="bg6" class="img-fluid" onclick="saveBG(6)"></div>
+            </div>
+
+            <h3 class="mt-4">Card Number</h3>
+            <div class="row">
+              <div class="col-md-4" onclick="saveCardNumber(8)"><div class="cn-kutu">4*4</div></div>
+              <div class="col-md-4" onclick="saveCardNumber(12)"><div class="cn-kutu">4*6</div></div>
+              <div class="col-md-4" onclick="saveCardNumber(16)"><div class="cn-kutu">4*8</div></div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-success" data-bs-dismiss="modal" onclick="saveSettings()">Save Changes</button> -->
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+<script>
+  
+  var acikSay = 0;
+  var acik1="";
+  var acik2="";
+
+  var ciftSayisi = 8;
+  var dogruSayac = 0;
+  var hak = 0;
+  var sure=0;
+  var zamanlayici;
+  var bgImage = "";
+  var kartSay = 0;
+  if(localStorage.bg != null && localStorage.bg != "" && localStorage.bg != undefined){
+    bgImage = localStorage.bg;
+  }
+  else{
+    localStorage.bg = "images/kart-bg1.jpg";
+    bgImage = "images/kart-bg1.jpg";
+  }
+  applyBG();
+
+  yeniOyun();
+
+  function saveBG(no){
+    localStorage.bg = "images/kart-bg" + no + ".jpg";
+    bgImage = "images/kart-bg" + no + ".jpg";
+    applyBG();
+  }
+
+  function applyBG(){
+    var stiller = document.styleSheets[0].cssRules;
+    
+    for(let stil of stiller){
+      if(stil.selectorText == ".kartbg"){
+        stil.style.setProperty("background-image","url('" + bgImage + "')");
+        // background-image: url('images/kart-bg1.jpg');
+        break;
+      }
+    }
+  }
+
+  function saveCardNumber(cardNumber){
+    localStorage.cardNumber = cardNumber;
+    
+  }
+
+  function yeniOyun(){
+    if(localStorage.cardNumber != null && localStorage.cardNumber != "" && localStorage.cardNumber != undefined){
+    kartSay = localStorage.cardNumber;
+  }
+  else{ // LocalStorage'da cardNumber yoksa default değer ver
+    localStorage.cardNumber = 8;
+    kartSay = 8;
+  }
+
+    var kelimeler = ["karpuz","mandalina","muz","erik","şeftali","ananas","mango","kivi","portakal","üzüm","greyfurt","avokado","elma","nar","kiraz","çilek","armut","ayva"];
+    
+    var kelimeYedek = kelimeler;
+    var kelimeler2 = [];
+    for(let i=0; i<kartSay;i++){
+      let sayi = Math.floor(Math.random() * kelimeYedek.length);
+      kelimeler2.push(kelimeYedek[sayi]);
+      kelimeYedek.splice(sayi,1); // ekrana yazılanı sil
+    }
+    kelimeler2 = kelimeler2.concat(kelimeler2);
+
+    hak=0;
+    acikSay=0;
+    dogruSayac=0;
+    var metin=`<div class="row">`;
+      // kelimelerin karışık gelmesini sağla
+    do{
+      let sayi = Math.floor(Math.random() * kelimeler2.length);
+      console.log(sayi + " - " + kelimeler2[sayi]);
+      metin += `<div class="col-md-3 p-3">
+                  <div class="kutu kartbg">
+                    <div class="meyve d-none">
+                      ${kelimeler2[sayi]}
+                    </div>
+                  </div>
+                </div>`;
+      kelimeler2.splice(sayi,1); // ekrana yazılanı sil
+    }while(kelimeler2.length > 0)
+    metin += "</div>";
+    document.getElementById("mesaj").innerHTML = metin;
+
+    eventLisEkle();
+    clearInterval(zamanlayici);
+    timer();
+  }
+
+  function eventLisEkle(){
+  var kutular = document.querySelectorAll(".kutu");
+    kutular.forEach(kt =>{
+      kt.addEventListener("click",(e)=>{ // kutulara tıklama işlemi
+        if(acikSay<2){ //  2. den sonra bastığı açılmasın diye
+          if(!kt.classList.contains("opened")){ // açık olana tekrar basmadıysa
+            acikSay++;
+            e.target.classList.remove("kartbg");
+            e.target.classList.add("opened");
+            e.target.querySelector(".meyve").classList.remove("d-none");
+            if(acikSay==1){ // 1. kartın açılması
+              acik1 = kt.innerText;
+            }
+            else{ // 2. kartın açıldığı yer
+              acik2 = kt.innerText;
+              hak++;
+              if(acik1 == acik2){ // bildiği durum
+                aciklariGizle();
+                dogruSayac++;
+                if(dogruSayac == ciftSayisi){ // Oyunun tamamlandığı yer
+                  document.getElementById("bildinMesaj").innerHTML = "<h1>TEBRİKLER.</h1><h3>" + hak + " defada bildiniz.<br>Bitirdiğiniz Süre: " + countTime(sure) + "</h3>";
+                  clearInterval(zamanlayici);
+                  const tamamModal = new bootstrap.Modal('#bildinModal');
+                  tamamModal.show();
+                }
+              }
+              else{ // bilemediği durum
+                aciklariTersCevir();
+              } // sonu- bilemediği durum 
+            } // sonu - 2.kartın seçildiği yer
+          } // sonu - opened içermiyorsa
+        } // sonu - açıksay < 2 - 2. den sonra bastığı açılmasın diye
+      });
+    })
+
+  } //addEventLis() fonksiyon sonu
+
+  function aciklariTersCevir(){
+    var aciklar = document.querySelectorAll(".opened");
+    for(let ac of aciklar){
+      setTimeout(()=>{
+        ac.classList.add("kartbg");
+        ac.classList.remove("opened");
+        ac.querySelector(".meyve").classList.add("d-none");
+        acikSay = 0;
+      },1500);
+    };
+  }
+
+  function aciklariGizle(){
+    var aciklar = document.querySelectorAll(".opened");
+    for(let ac of aciklar){
+      ac.classList.add("bg-success");
+      setTimeout(()=>{
+        ac.classList.add("gizle");
+        ac.classList.remove("opened");
+        acikSay = 0;
+      },1500);
+    };
+  }
+
+  function timer(){
+    sure=0;
+    zamanlayici = setInterval(()=>{
+      let zaman = countTime(sure);
+      document.getElementById("sure").innerText = zaman;
+      sure++;
+    },1000);
+  }
+
+  function countTime(seconds){
+    let dakika = Math.floor(seconds/60);
+      let saniye = seconds - (dakika*60);
+      let zaman = "";
+      if(dakika<10){
+        zaman = "0" + dakika;
+      }
+      else{
+        zaman = dakika;
+      }
+      zaman += " : ";
+      if(saniye<10){
+        zaman += "0" + saniye;
+      }
+      else{
+        zaman += saniye;
+      }
+
+      return zaman;
+  }
+</script>
+    
+
+</body>
+</html>
